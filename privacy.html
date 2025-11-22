@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プライバシーポリシー | 斑鳩の米飴 - ゆめの飴</title>
+    <meta name="description" content="斑鳩の米飴のプライバシーポリシー（個人情報保護方針）をご案内しています。">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sumi': '#1A1A1A',
+                        'indigo-blue': '#2C3E50',
+                        'cream': '#F8F9FA',
+                        'amber-light': '#FFF8E1',
+                        'zen-gray': '#E0E0E0'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'Noto Sans JP', 'sans-serif'],
+                        'display': ['Manrope', 'Noto Sans JP', 'sans-serif']
+                    },
+                    animation: {
+                        'fadeIn': 'fadeIn 1.2s ease-out',
+                        'slideUp': 'slideUp 0.8s ease-out'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Page Specific Styles */
+        .page-header {
+            background: linear-gradient(135deg, #2C3E50 0%, #1A1A1A 100%);
+        }
+    </style>
+</head>
+
+<body class="font-sans text-sumi bg-cream">
+
+    <!-- Header Navigation -->
+    <header class="bg-sumi text-white">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-display font-bold hover:opacity-80 transition-opacity">
+                        ゆめの飴
+                    </a>
+                </div>
+
+                <!-- Navigation Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="hover:opacity-80 transition-opacity">トップページ</a>
+                    <a href="index.html#philosophy" class="hover:opacity-80 transition-opacity">米飴について</a>
+                    <a href="index.html#products" class="hover:opacity-80 transition-opacity">商品一覧</a>
+                    <a href="contact.html#stores" class="hover:opacity-80 transition-opacity">取扱店舗</a>
+                    <a href="https://external-shop.example.com" target="_blank"
+                        class="bg-white text-indigo-blue px-6 py-2 rounded-full hover:bg-opacity-90 transition-all">
+                        通販サイトへ
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div class="hidden fixed inset-0 bg-sumi bg-opacity-95 z-40" id="mobile-menu">
+            <div class="flex flex-col items-center justify-center h-full space-y-8">
+                <a href="index.html" class="text-white text-2xl hover:opacity-80">トップページ</a>
+                <a href="index.html#philosophy" class="text-white text-2xl hover:opacity-80">米飴について</a>
+                <a href="index.html#products" class="text-white text-2xl hover:opacity-80">商品一覧</a>
+                <a href="contact.html#stores" class="text-white text-2xl hover:opacity-80">取扱店舗</a>
+                <a href="https://external-shop.example.com" target="_blank"
+                    class="bg-white text-indigo-blue px-8 py-3 rounded-full text-xl">
+                    通販サイトへ
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header py-20 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-display font-bold mb-4" data-aos="fade-up">
+                プライバシーポリシー
+            </h1>
+            <p class="text-lg opacity-90" data-aos="fade-up" data-aos-delay="100">
+                Privacy Policy
+            </p>
+        </div>
+    </section>
+
+    <!-- Privacy Policy Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-16" data-aos="fade-up">
+                    <div class="bg-cream p-8 rounded-lg">
+                        <div class="space-y-6 text-gray-700">
+                            <div>
+                                <h3 class="font-semibold mb-2">個人情報の利用目的</h3>
+                                <p>
+                                    お問い合わせフォームから取得した個人情報は、以下の目的のみに利用いたします。
+                                </p>
+                                <ul class="list-disc list-inside mt-2 ml-4">
+                                    <li>お問い合わせへの回答</li>
+                                    <li>商品の発送及びご連絡</li>
+                                    <li>当社からの情報提供（お客様の同意がある場合）</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h3 class="font-semibold mb-2">第三者への提供</h3>
+                                <p>
+                                    お客様からお預かりした個人情報は、法令に基づく場合を除き、
+                                    お客様の同意なく第三者に提供することはありません。
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 class="font-semibold mb-2">個人情報の管理</h3>
+                                <p>
+                                    当社は、個人情報への不正アクセス、紛失、破損、改ざん及び漏洩などを防ぐため、
+                                    適切な管理体制を整えています。
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 class="font-semibold mb-2">お問い合わせ窓口</h3>
+                                <p>
+                                    個人情報に関するお問い合わせは、下記までご連絡ください。<br>
+                                    メール: info@yumenoame.jp<br>
+                                    電話: 090-XXXX-XXXX
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="contact.html" class="text-indigo-blue hover:underline">
+                        <i class="fas fa-arrow-left mr-2"></i>お問い合わせ・会社情報に戻る
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-sumi text-white py-16 relative overflow-hidden">
+        <!-- Background Logo -->
+        <div class="absolute inset-0 flex items-center justify-center opacity-5">
+            <div class="text-[200px] font-display font-bold">
+                ゆめの飴
+            </div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <!-- Company Info -->
+                    <div>
+                        <h3 class="text-2xl font-display font-bold mb-4">ゆめの飴</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            奈良・斑鳩から、<br>
+                            ていねいに作った米飴をお届けします。
+                        </p>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">サイトマップ</h4>
+                        <ul class="space-y-2">
+                            <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">トップページ</a>
+                            </li>
+                            <li><a href="index.html#philosophy"
+                                    class="text-gray-400 hover:text-white transition-colors">米飴について</a></li>
+                            <li><a href="index.html#products"
+                                    class="text-gray-400 hover:text-white transition-colors">商品一覧</a></li>
+                            <li><a href="contact.html#stores"
+                                    class="text-gray-400 hover:text-white transition-colors">取扱店舗</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Legal Links -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">会社情報</h4>
+                        <ul class="space-y-2">
+                            <li><a href="contact.html"
+                                    class="text-gray-400 hover:text-white transition-colors">お問い合わせ・会社情報</a></li>
+                            <li><a href="privacy.html"
+                                    class="text-gray-400 hover:text-white transition-colors">プライバシーポリシー</a></li>
+                            <li><a href="law.html"
+                                    class="text-gray-400 hover:text-white transition-colors">特定商取引法に基づく表記</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-700 pt-8 text-center">
+                    <p class="text-gray-500 text-sm">
+                        &copy; 2023 Yumenoame. All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+    </script>
+</body>
+
+</html>
