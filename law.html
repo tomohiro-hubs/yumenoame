@@ -184,60 +184,75 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-sumi text-white py-16 relative overflow-hidden">
-        <!-- Background Logo -->
-        <div class="absolute inset-0 flex items-center justify-center opacity-5">
-            <div class="text-[200px] font-display font-bold">
-                ゆめの飴
-            </div>
+    <footer class="relative bg-[#3d3228] text-[#f3e5d8] pt-24 pb-12 overflow-hidden">
+        <!-- Wave Shape Divider -->
+        <div class="absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none" class="relative block w-[calc(100%+1.3px)] h-[60px] text-white">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="fill-current"></path>
+            </svg>
+        </div>
+
+        <!-- Background Pattern (Subtle) -->
+        <div class="absolute inset-0 opacity-5 pointer-events-none"
+            style="background-image: url('data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\' fill-rule=\'evenodd\'%3E%3Ccircle cx=\'3\' cy=\'3\' r=\'3\'/%3E%3Ccircle cx=\'13\' cy=\'13\' r=\'3\'/%3E%3C/g%3E%3C/svg%3E'); background-size: 40px 40px;">
         </div>
 
         <div class="container mx-auto px-6 relative z-10">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid md:grid-cols-3 gap-8 mb-12">
-                    <!-- Company Info -->
-                    <div>
-                        <h3 class="text-2xl font-display font-bold mb-4">ゆめの飴</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            奈良・斑鳩から、<br>
-                            ていねいに作った米飴をお届けします。
-                        </p>
-                    </div>
+            <div class="flex flex-col items-center text-center mb-12">
+                <!-- Logo -->
+                <a href="index.html" class="mb-6 group">
+                    <span
+                        class="text-3xl font-serif font-bold tracking-widest group-hover:opacity-80 transition-opacity">ゆめの飴</span>
+                </a>
+                <p class="text-sm opacity-90 leading-loose max-w-md mx-auto mb-8 font-serif">
+                    奈良・斑鳩の地で、昔ながらの製法を守り続ける。<br>
+                    お米と麦芽だけで作った、体にも心にも優しい甘さ。
+                </p>
 
-                    <!-- Quick Links -->
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4">サイトマップ</h4>
-                        <ul class="space-y-2">
-                            <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">トップページ</a>
-                            </li>
-                            <li><a href="index.html#philosophy"
-                                    class="text-gray-400 hover:text-white transition-colors">米飴について</a></li>
-                            <li><a href="index.html#products"
-                                    class="text-gray-400 hover:text-white transition-colors">商品一覧</a></li>
-                            <li><a href="contact.html#stores"
-                                    class="text-gray-400 hover:text-white transition-colors">取扱店舗</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Legal Links -->
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4">会社情報</h4>
-                        <ul class="space-y-2">
-                            <li><a href="contact.html"
-                                    class="text-gray-400 hover:text-white transition-colors">お問い合わせ・会社情報</a></li>
-                            <li><a href="privacy.html"
-                                    class="text-gray-400 hover:text-white transition-colors">プライバシーポリシー</a></li>
-                            <li><a href="law.html"
-                                    class="text-gray-400 hover:text-white transition-colors">特定商取引法に基づく表記</a></li>
-                        </ul>
-                    </div>
+                <!-- Social / Contact Icons -->
+                <div class="flex space-x-8 mb-8">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full border border-[#f3e5d8] flex items-center justify-center hover:bg-[#f3e5d8] hover:text-[#3d3228] transition-all">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="contact.html"
+                        class="w-10 h-10 rounded-full border border-[#f3e5d8] flex items-center justify-center hover:bg-[#f3e5d8] hover:text-[#3d3228] transition-all">
+                        <i class="fas fa-envelope"></i>
+                    </a>
                 </div>
+            </div>
 
-                <div class="border-t border-gray-700 pt-8 text-center">
-                    <p class="text-gray-500 text-sm">
-                        &copy; 2023 Yumenoame. All Rights Reserved.
-                    </p>
+            <!-- Links -->
+            <div class="grid md:grid-cols-3 gap-8 border-t border-[#5d4d3e] pt-12 max-w-4xl mx-auto text-sm">
+                <div class="text-center">
+                    <h4 class="font-bold mb-4 text-[#d4af37] tracking-wider">商品・サービス</h4>
+                    <ul class="space-y-3 opacity-80">
+                        <li><a href="index.html#products" class="hover:text-white transition-colors">商品一覧</a></li>
+                        <li><a href="index.html#philosophy" class="hover:text-white transition-colors">米飴について</a></li>
+                        <li><a href="contact.html#stores" class="hover:text-white transition-colors">取扱店舗</a></li>
+                    </ul>
                 </div>
+                <div class="text-center">
+                    <h4 class="font-bold mb-4 text-[#d4af37] tracking-wider">サポート</h4>
+                    <ul class="space-y-3 opacity-80">
+                        <li><a href="index.html#faq" class="hover:text-white transition-colors">よくあるご質問</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="text-center">
+                    <h4 class="font-bold mb-4 text-[#d4af37] tracking-wider">法的情報</h4>
+                    <ul class="space-y-3 opacity-80">
+                        <li><a href="privacy.html" class="hover:text-white transition-colors">プライバシーポリシー</a></li>
+                        <li><a href="law.html" class="hover:text-white transition-colors">特定商取引法に基づく表記</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center mt-16 pt-8 border-t border-[#5d4d3e] text-xs opacity-60 font-sans">
+                <p>&copy; 2024 Yumenoame. All Rights Reserved.</p>
             </div>
         </div>
     </footer>

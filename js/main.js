@@ -241,6 +241,36 @@ document.addEventListener('mousemove', (e) => {
     }
 });
 
+// Initialize Swiper for Customer Voices
+const customerSwiper = new Swiper('.customer-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 1,
+        },
+        768: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 3,
+        },
+    }
+});
+
 // Console Easter Egg
 console.log('%c🍯 ゆめの飴 - 斑鳩の米飴', 'font-size: 20px; font-weight: bold; color: #2C3E50;');
 console.log('%c今日の砂糖を、ひとさじだけ。', 'font-size: 14px; color: #666;');

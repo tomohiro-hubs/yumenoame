@@ -72,6 +72,9 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <!-- Custom Styles -->
     <style>
         /* Noise Texture Background */
@@ -179,7 +182,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden py-24">
         <!-- Background Image with Parallax -->
         <div class="absolute inset-0 z-0 parallax-bg">
             <img src="https://images.unsplash.com/photo-1509664158680-07c5032b51e5?auto=format&fit=crop&w=1920&q=80"
@@ -200,14 +203,9 @@
                     <span class="text-3xl md:text-5xl">「斑鳩の米飴」</span>
                 </h1>
                 <div class="max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="200">
-                    <p class="text-lg leading-relaxed opacity-90">
-                        奈良・斑鳩町のうるち米と、オーガニック麦芽だけで煮詰めた「斑鳩の米飴」。<br>
-                        人工甘味料・防腐剤・漂白剤は使わず、穀物由来の素朴な甘さを引き出した自然甘味料です。
-                    </p>
-                    <p class="mt-4 text-lg leading-relaxed opacity-90">
-                        子どものおやつや、家族のデザート。<br>
-                        「市販の甘いものばかりでいいのかな」と迷ったときに、<br>
-                        砂糖をやめるのではなく、ひとさじだけ米飴にかえるという選択を。
+                    <p class="text-lg md:text-xl leading-relaxed opacity-90">
+                        奈良・斑鳩の地で育まれた、お米と麦芽だけの優しい甘さ。<br class="hidden md:inline">
+                        砂糖の代わりにひとさじ。日々の食卓に、黄金色の安心を。
                     </p>
                 </div>
 
@@ -556,53 +554,163 @@
     <!-- Customer Voice Section -->
     <section class="py-32 bg-white">
         <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-6xl mx-auto">
                 <h2 class="text-3xl md:text-4xl font-display font-bold text-center mb-16" data-aos="fade-up">
                     ご愛用いただいている方の声
                 </h2>
 
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Voice 1 -->
-                    <div class="bg-cream p-8 rounded-2xl relative overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-                        data-aos="fade-up" data-aos-delay="100">
-                        <div class="absolute top-4 right-4 text-indigo-blue opacity-10">
-                            <i class="fas fa-quote-right text-6xl"></i>
-                        </div>
-                        <div class="relative z-10">
-                            <div class="flex items-center mb-6">
-                                <div
-                                    class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-indigo-blue shadow-sm mr-4">
-                                    <i class="fas fa-user"></i>
+                <!-- Swiper -->
+                <div class="swiper customer-swiper pb-12" data-aos="fade-up" data-aos-delay="100">
+                    <div class="swiper-wrapper">
+                        <!-- Voice 1 -->
+                        <div class="swiper-slide h-auto">
+                            <div
+                                class="bg-cream p-8 rounded-2xl relative overflow-hidden shadow-sm hover:shadow-md transition-shadow h-full">
+                                <div class="absolute top-4 right-4 text-indigo-blue opacity-10">
+                                    <i class="fas fa-quote-right text-6xl"></i>
                                 </div>
-                                <p class="text-sm font-bold text-gray-600">京都府 A.Nさん</p>
+                                <div class="relative z-10">
+                                    <div class="flex items-center mb-6">
+                                        <div
+                                            class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-indigo-blue shadow-sm mr-4">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                        <p class="text-sm font-bold text-gray-600">京都府 A.Nさん<br><span
+                                                class="text-xs font-normal">30代 女性</span></p>
+                                    </div>
+                                    <p class="text-lg leading-relaxed text-sumi">
+                                        「市販のおやつだけに頼るのが気になっていたときに出会いました。
+                                        ヨーグルトやアイスにひとさじかけるだけで満足感があって、家族にも好評です。」
+                                    </p>
+                                </div>
                             </div>
-                            <p class="text-lg leading-relaxed text-sumi">
-                                「市販のおやつだけに頼るのが気になっていたときに出会いました。
-                                ヨーグルトやアイスにひとさじかけるだけで満足感があって、家族にも好評です。」
-                            </p>
                         </div>
-                    </div>
 
-                    <!-- Voice 2 -->
-                    <div class="bg-cream p-8 rounded-2xl relative overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-                        data-aos="fade-up" data-aos-delay="200">
-                        <div class="absolute top-4 right-4 text-indigo-blue opacity-10">
-                            <i class="fas fa-quote-right text-6xl"></i>
-                        </div>
-                        <div class="relative z-10">
-                            <div class="flex items-center mb-6">
-                                <div
-                                    class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-indigo-blue shadow-sm mr-4">
-                                    <i class="fas fa-user"></i>
+                        <!-- Voice 2 -->
+                        <div class="swiper-slide h-auto">
+                            <div
+                                class="bg-cream p-8 rounded-2xl relative overflow-hidden shadow-sm hover:shadow-md transition-shadow h-full">
+                                <div class="absolute top-4 right-4 text-indigo-blue opacity-10">
+                                    <i class="fas fa-quote-right text-6xl"></i>
                                 </div>
-                                <p class="text-sm font-bold text-gray-600">神奈川県 内田様</p>
+                                <div class="relative z-10">
+                                    <div class="flex items-center mb-6">
+                                        <div
+                                            class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-indigo-blue shadow-sm mr-4">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                        <p class="text-sm font-bold text-gray-600">神奈川県 内田様<br><span
+                                                class="text-xs font-normal">50代 女性</span></p>
+                                    </div>
+                                    <p class="text-lg leading-relaxed text-sumi">
+                                        「照り焼きや煮物の仕上げに使うと、つやが出て見た目もきれい。
+                                        原材料がシンプルなので、毎日の料理にも取り入れやすいです。」
+                                    </p>
+                                </div>
                             </div>
-                            <p class="text-lg leading-relaxed text-sumi">
-                                「照り焼きや煮物の仕上げに使うと、つやが出て見た目もきれい。
-                                原材料がシンプルなので、毎日の料理にも取り入れやすいです。」
-                            </p>
+                        </div>
+
+                        <!-- Voice 3 -->
+                        <div class="swiper-slide h-auto">
+                            <div
+                                class="bg-cream p-8 rounded-2xl relative overflow-hidden shadow-sm hover:shadow-md transition-shadow h-full">
+                                <div class="absolute top-4 right-4 text-indigo-blue opacity-10">
+                                    <i class="fas fa-quote-right text-6xl"></i>
+                                </div>
+                                <div class="relative z-10">
+                                    <div class="flex items-center mb-6">
+                                        <div
+                                            class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-indigo-blue shadow-sm mr-4">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                        <p class="text-sm font-bold text-gray-600">奈良県 S.Kさん<br><span
+                                                class="text-xs font-normal">40代 男性</span></p>
+                                    </div>
+                                    <p class="text-lg leading-relaxed text-sumi">
+                                        「乾燥する季節、喉の調子が気になるときにそのまま舐めています。
+                                        じんわり広がる優しい甘さに癒されますね。昔懐かしい味です。」
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Voice 4 -->
+                        <div class="swiper-slide h-auto">
+                            <div
+                                class="bg-cream p-8 rounded-2xl relative overflow-hidden shadow-sm hover:shadow-md transition-shadow h-full">
+                                <div class="absolute top-4 right-4 text-indigo-blue opacity-10">
+                                    <i class="fas fa-quote-right text-6xl"></i>
+                                </div>
+                                <div class="relative z-10">
+                                    <div class="flex items-center mb-6">
+                                        <div
+                                            class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-indigo-blue shadow-sm mr-4">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                        <p class="text-sm font-bold text-gray-600">大阪府 M.Oさん<br><span
+                                                class="text-xs font-normal">20代 女性</span></p>
+                                    </div>
+                                    <p class="text-lg leading-relaxed text-sumi">
+                                        「子供の離乳食の甘み付けに使っています。
+                                        砂糖よりも穏やかな甘さで、素材の味を邪魔しないのがいいですね。安心してあげられます。」
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Voice 5 -->
+                        <div class="swiper-slide h-auto">
+                            <div
+                                class="bg-cream p-8 rounded-2xl relative overflow-hidden shadow-sm hover:shadow-md transition-shadow h-full">
+                                <div class="absolute top-4 right-4 text-indigo-blue opacity-10">
+                                    <i class="fas fa-quote-right text-6xl"></i>
+                                </div>
+                                <div class="relative z-10">
+                                    <div class="flex items-center mb-6">
+                                        <div
+                                            class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-indigo-blue shadow-sm mr-4">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                        <p class="text-sm font-bold text-gray-600">東京都 Y.Tさん<br><span
+                                                class="text-xs font-normal">60代 男性</span></p>
+                                    </div>
+                                    <p class="text-lg leading-relaxed text-sumi">
+                                        「毎朝のコーヒーに入れて楽しんでいます。
+                                        砂糖とは違う、コクのある甘みが気に入っています。煮豆を作るときにも重宝していますよ。」
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Voice 6 -->
+                        <div class="swiper-slide h-auto">
+                            <div
+                                class="bg-cream p-8 rounded-2xl relative overflow-hidden shadow-sm hover:shadow-md transition-shadow h-full">
+                                <div class="absolute top-4 right-4 text-indigo-blue opacity-10">
+                                    <i class="fas fa-quote-right text-6xl"></i>
+                                </div>
+                                <div class="relative z-10">
+                                    <div class="flex items-center mb-6">
+                                        <div
+                                            class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-indigo-blue shadow-sm mr-4">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                        <p class="text-sm font-bold text-gray-600">兵庫県 H.Rさん<br><span
+                                                class="text-xs font-normal">30代 女性</span></p>
+                                    </div>
+                                    <p class="text-lg leading-relaxed text-sumi">
+                                        「友人の出産祝いに贈りました。
+                                        『パッケージも可愛くて、何より味が美味しい！』と喜んでもらえました。今度は自分用に買おうと思います。」
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Navigation -->
+                    <div class="swiper-button-next text-indigo-blue"></div>
+                    <div class="swiper-button-prev text-indigo-blue"></div>
                 </div>
             </div>
         </div>
@@ -719,64 +827,82 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-sumi text-white py-16 relative overflow-hidden">
-        <!-- Background Logo -->
-        <div class="absolute inset-0 flex items-center justify-center opacity-5">
-            <div class="text-[200px] font-display font-bold">
-                ゆめの飴
-            </div>
+    <footer class="relative bg-[#3d3228] text-[#f3e5d8] pt-24 pb-12 overflow-hidden">
+        <!-- Wave Shape Divider -->
+        <div class="absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none" class="relative block w-[calc(100%+1.3px)] h-[60px] text-white">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="fill-current"></path>
+            </svg>
+        </div>
+
+        <!-- Background Pattern (Subtle) -->
+        <div class="absolute inset-0 opacity-5 pointer-events-none"
+            style="background-image: url('data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\' fill-rule=\'evenodd\'%3E%3Ccircle cx=\'3\' cy=\'3\' r=\'3\'/%3E%3Ccircle cx=\'13\' cy=\'13\' r=\'3\'/%3E%3C/g%3E%3C/svg%3E'); background-size: 40px 40px;">
         </div>
 
         <div class="container mx-auto px-6 relative z-10">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid md:grid-cols-3 gap-8 mb-12">
-                    <!-- Company Info -->
-                    <div>
-                        <h3 class="text-2xl font-display font-bold mb-4">ゆめの飴</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            奈良・斑鳩から、<br>
-                            ていねいに作った米飴をお届けします。
-                        </p>
-                    </div>
+            <div class="flex flex-col items-center text-center mb-12">
+                <!-- Logo -->
+                <a href="index.html" class="mb-6 group">
+                    <span
+                        class="text-3xl font-serif font-bold tracking-widest group-hover:opacity-80 transition-opacity">ゆめの飴</span>
+                </a>
+                <p class="text-sm opacity-90 leading-loose max-w-md mx-auto mb-8 font-serif">
+                    奈良・斑鳩の地で、昔ながらの製法を守り続ける。<br>
+                    お米と麦芽だけで作った、体にも心にも優しい甘さ。
+                </p>
 
-                    <!-- Quick Links -->
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4">サイトマップ</h4>
-                        <ul class="space-y-2">
-                            <li><a href="#philosophy"
-                                    class="text-gray-400 hover:text-white transition-colors">米飴について</a></li>
-                            <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">商品一覧</a>
-                            </li>
-                            <li><a href="#usage" class="text-gray-400 hover:text-white transition-colors">使い方</a></li>
-                            <li><a href="#faq" class="text-gray-400 hover:text-white transition-colors">よくある質問</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Legal Links -->
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4">会社情報</h4>
-                        <ul class="space-y-2">
-                            <li><a href="contact.html"
-                                    class="text-gray-400 hover:text-white transition-colors">お問い合わせ・会社情報</a></li>
-                            <li><a href="privacy.html"
-                                    class="text-gray-400 hover:text-white transition-colors">プライバシーポリシー</a></li>
-                            <li><a href="law.html"
-                                    class="text-gray-400 hover:text-white transition-colors">特定商取引法に基づく表記</a></li>
-                        </ul>
-                    </div>
+                <!-- Social / Contact Icons -->
+                <div class="flex space-x-8 mb-8">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full border border-[#f3e5d8] flex items-center justify-center hover:bg-[#f3e5d8] hover:text-[#3d3228] transition-all">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="contact.html"
+                        class="w-10 h-10 rounded-full border border-[#f3e5d8] flex items-center justify-center hover:bg-[#f3e5d8] hover:text-[#3d3228] transition-all">
+                        <i class="fas fa-envelope"></i>
+                    </a>
                 </div>
+            </div>
 
-                <div class="border-t border-gray-700 pt-8 text-center">
-                    <p class="text-gray-400">
-                        &copy; 2024 ゆめの飴. All Rights Reserved.
-                    </p>
+            <!-- Links -->
+            <div class="grid md:grid-cols-3 gap-8 border-t border-[#5d4d3e] pt-12 max-w-4xl mx-auto text-sm">
+                <div class="text-center">
+                    <h4 class="font-bold mb-4 text-[#d4af37] tracking-wider">商品・サービス</h4>
+                    <ul class="space-y-3 opacity-80">
+                        <li><a href="index.html#products" class="hover:text-white transition-colors">商品一覧</a></li>
+                        <li><a href="index.html#philosophy" class="hover:text-white transition-colors">米飴について</a></li>
+                        <li><a href="contact.html#stores" class="hover:text-white transition-colors">取扱店舗</a></li>
+                    </ul>
                 </div>
+                <div class="text-center">
+                    <h4 class="font-bold mb-4 text-[#d4af37] tracking-wider">サポート</h4>
+                    <ul class="space-y-3 opacity-80">
+                        <li><a href="index.html#faq" class="hover:text-white transition-colors">よくあるご質問</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="text-center">
+                    <h4 class="font-bold mb-4 text-[#d4af37] tracking-wider">法的情報</h4>
+                    <ul class="space-y-3 opacity-80">
+                        <li><a href="privacy.html" class="hover:text-white transition-colors">プライバシーポリシー</a></li>
+                        <li><a href="law.html" class="hover:text-white transition-colors">特定商取引法に基づく表記</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center mt-16 pt-8 border-t border-[#5d4d3e] text-xs opacity-60 font-sans">
+                <p>&copy; 2024 Yumenoame. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 
