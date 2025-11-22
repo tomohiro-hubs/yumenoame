@@ -11,21 +11,21 @@ let lastScrollY = window.scrollY;
 
 window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
-    
+
     // Add background to header when scrolling down
     if (currentScrollY > 100) {
         header.classList.add('bg-sumi', 'bg-opacity-95', 'backdrop-blur-md', 'shadow-lg');
     } else {
         header.classList.remove('bg-sumi', 'bg-opacity-95', 'backdrop-blur-md', 'shadow-lg');
     }
-    
+
     // Hide/show header based on scroll direction
     if (currentScrollY > lastScrollY && currentScrollY > 500) {
         header.classList.add('-translate-y-full');
     } else {
         header.classList.remove('-translate-y-full');
     }
-    
+
     lastScrollY = currentScrollY;
 });
 
@@ -36,19 +36,19 @@ let isMenuOpen = false;
 
 mobileMenuBtn.addEventListener('click', () => {
     isMenuOpen = !isMenuOpen;
-    
+
     if (isMenuOpen) {
         mobileMenu.classList.remove('hidden');
         mobileMenu.classList.add('block');
         document.body.classList.add('overflow-hidden');
-        
+
         // Change button icon
         mobileMenuBtn.innerHTML = '<i class="fas fa-times text-2xl"></i>';
     } else {
         mobileMenu.classList.add('hidden');
         mobileMenu.classList.remove('block');
         document.body.classList.remove('overflow-hidden');
-        
+
         // Change button icon
         mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-2xl"></i>';
     }
@@ -72,7 +72,7 @@ if (heroSection) {
     window.addEventListener('scroll', () => {
         const scrolled = window.scrollY;
         const parallaxSpeed = 0.5;
-        
+
         if (scrolled < window.innerHeight) {
             heroSection.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
         }
@@ -87,7 +87,7 @@ faqToggles.forEach(toggle => {
         const faqId = toggle.getAttribute('data-faq');
         const content = document.getElementById(`faq-content-${faqId}`);
         const icon = document.getElementById(`faq-icon-${faqId}`);
-        
+
         // Toggle content visibility
         if (content.classList.contains('hidden')) {
             // Close all other FAQs
@@ -97,7 +97,7 @@ faqToggles.forEach(toggle => {
             document.querySelectorAll('[id^="faq-icon-"]').forEach(otherIcon => {
                 otherIcon.classList.remove('rotate-180');
             });
-            
+
             // Open this FAQ
             content.classList.remove('hidden');
             icon.classList.add('rotate-180');
@@ -113,16 +113,16 @@ faqToggles.forEach(toggle => {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        
+
         const targetId = this.getAttribute('href');
         if (targetId === '#') return;
-        
+
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
             const headerOffset = 80;
             const elementPosition = targetElement.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-            
+
             window.scrollTo({
                 top: offsetPosition,
                 behavior: 'smooth'
@@ -136,7 +136,7 @@ const imageObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const img = entry.target;
-            
+
             // Check if image has data-src attribute for lazy loading
             if (img.dataset.src) {
                 img.src = img.dataset.src;
@@ -157,11 +157,11 @@ document.querySelectorAll('img').forEach(img => {
 // Add subtle animation to product cards on hover
 const productCards = document.querySelectorAll('[data-aos]');
 productCards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
+    card.addEventListener('mouseenter', function () {
         this.style.transform = 'translateY(-5px)';
     });
-    
-    card.addEventListener('mouseleave', function() {
+
+    card.addEventListener('mouseleave', function () {
         this.style.transform = 'translateY(0)';
     });
 });
@@ -169,7 +169,7 @@ productCards.forEach(card => {
 // Performance: Throttle scroll events
 function throttle(func, limit) {
     let inThrottle;
-    return function() {
+    return function () {
         const args = arguments;
         const context = this;
         if (!inThrottle) {
@@ -189,7 +189,7 @@ window.addEventListener('scroll', throttle(() => {
 document.addEventListener('DOMContentLoaded', () => {
     // Add initial animations
     document.body.classList.add('loaded');
-    
+
     // Animate hero text sequentially
     const heroElements = document.querySelectorAll('[data-aos]');
     heroElements.forEach((el, index) => {
@@ -209,7 +209,7 @@ window.addEventListener('load', () => {
             loader.remove();
         }, 300);
     }
-    
+
     // Trigger initial animations
     document.body.classList.add('page-loaded');
 });
@@ -242,34 +242,51 @@ document.addEventListener('mousemove', (e) => {
 });
 
 // Initialize Swiper for Customer Voices
-const customerSwiper = new Swiper('.customer-swiper', {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-        640: {
+function initializeSwiper() {
+    if (typeof Swiper !== 'undefined') {
+        const customerSwiper = new Swiper('.customer-swiper', {
             slidesPerView: 1,
-        },
-        768: {
-            slidesPerView: 2,
-        },
-        1024: {
-            slidesPerView: 3,
-        },
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            }
+        });
+        console.log('Swiper initialized successfully');
+    } else {
+        console.error('Swiper library not loaded');
     }
-});
+}
+
+// Initialize Swiper when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeSwiper);
+} else {
+    initializeSwiper();
+}
 
 // Console Easter Egg
 console.log('%c🍯 ゆめの飴 - 斑鳩の米飴', 'font-size: 20px; font-weight: bold; color: #2C3E50;');
