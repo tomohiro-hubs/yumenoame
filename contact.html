@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ・会社情報 | 斑鳩の米飴 - ゆめの飴</title>
+    <meta name="description" content="斑鳩の米飴のご購入方法、お問い合わせフォーム、会社情報、奈良県内の取扱店舗一覧をご案内しています。">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sumi': '#1A1A1A',
+                        'indigo-blue': '#2C3E50',
+                        'cream': '#F8F9FA',
+                        'amber-light': '#FFF8E1',
+                        'zen-gray': '#E0E0E0'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'Noto Sans JP', 'sans-serif'],
+                        'display': ['Manrope', 'Noto Sans JP', 'sans-serif']
+                    },
+                    animation: {
+                        'fadeIn': 'fadeIn 1.2s ease-out',
+                        'slideUp': 'slideUp 0.8s ease-out'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* Page Specific Styles */
+        .page-header {
+            background: linear-gradient(135deg, #2C3E50 0%, #1A1A1A 100%);
+        }
+        
+        .store-card {
+            transition: all 0.3s ease;
+        }
+        
+        .store-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        /* Form Styles */
+        .form-input {
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-input:focus {
+            border-color: #2C3E50;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans text-sumi bg-cream">
+    
+    <!-- Header Navigation -->
+    <header class="bg-sumi text-white">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-display font-bold hover:opacity-80 transition-opacity">
+                        ゆめの飴
+                    </a>
+                </div>
+                
+                <!-- Navigation Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="hover:opacity-80 transition-opacity">トップページ</a>
+                    <a href="index.html#philosophy" class="hover:opacity-80 transition-opacity">米飴について</a>
+                    <a href="index.html#products" class="hover:opacity-80 transition-opacity">商品一覧</a>
+                    <a href="#stores" class="hover:opacity-80 transition-opacity">取扱店舗</a>
+                    <a href="https://external-shop.example.com" target="_blank" class="bg-white text-indigo-blue px-6 py-2 rounded-full hover:bg-opacity-90 transition-all">
+                        通販サイトへ
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div class="hidden fixed inset-0 bg-sumi bg-opacity-95 z-40" id="mobile-menu">
+            <div class="flex flex-col items-center justify-center h-full space-y-8">
+                <a href="index.html" class="text-white text-2xl hover:opacity-80">トップページ</a>
+                <a href="index.html#philosophy" class="text-white text-2xl hover:opacity-80">米飴について</a>
+                <a href="index.html#products" class="text-white text-2xl hover:opacity-80">商品一覧</a>
+                <a href="#stores" class="text-white text-2xl hover:opacity-80">取扱店舗</a>
+                <a href="https://external-shop.example.com" target="_blank" class="bg-white text-indigo-blue px-8 py-3 rounded-full text-xl">
+                    通販サイトへ
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Page Header -->
+    <section class="page-header py-20 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-display font-bold mb-4" data-aos="fade-up">
+                お問い合わせ・会社情報
+            </h1>
+            <p class="text-lg opacity-90" data-aos="fade-up" data-aos-delay="100">
+                ご購入方法・取扱店舗のご案内
+            </p>
+        </div>
+    </section>
+    
+    <!-- Purchase Method Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-display font-bold text-center mb-12" data-aos="fade-up">
+                    ご購入方法
+                </h2>
+                
+                <div class="bg-cream p-8 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                    <p class="text-lg mb-8">
+                        斑鳩の米飴は、提携通販サイトからいつでもご注文いただけます。
+                    </p>
+                    
+                    <div class="bg-white p-6 rounded-lg mb-8">
+                        <h3 class="text-xl font-bold mb-4">【ご注文の流れ】</h3>
+                        <ol class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="bg-indigo-blue text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">1</span>
+                                <span>下の「通販サイトで購入する」ボタンをクリック</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-indigo-blue text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">2</span>
+                                <span>通販サイトで商品・数量を選択</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-indigo-blue text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">3</span>
+                                <span>お届け先情報・お支払い方法を入力</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-indigo-blue text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">4</span>
+                                <span>ご注文内容を確認して完了</span>
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <p class="text-lg mb-8">
+                        ご自宅用、贈り物、まとめ買いなど、用途に合わせてご利用ください。
+                    </p>
+                    
+                    <div class="text-center">
+                        <a href="https://external-shop.example.com" target="_blank" 
+                           class="inline-block bg-indigo-blue text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all">
+                            <i class="fas fa-shopping-cart mr-2"></i>通販サイトで購入する
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Illustration -->
+                <div class="mt-12 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80" 
+                         alt="オンラインショッピング" 
+                         class="mx-auto rounded-lg shadow-md max-w-md w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Form Section -->
+    <section class="py-20 bg-cream">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-display font-bold text-center mb-8" data-aos="fade-up">
+                    お問い合わせ
+                </h2>
+                
+                <p class="text-lg text-center mb-12" data-aos="fade-up" data-aos-delay="100">
+                    商品に関するご質問、贈答用のご相談、取扱いのご希望などは、<br>
+                    下記フォームまたはメールにてお気軽にご連絡ください。
+                </p>
+                
+                <form class="bg-white p-8 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Name Field -->
+                    <div class="mb-6">
+                        <label for="name" class="block text-sm font-semibold mb-2">
+                            お名前 <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" id="name" name="name" required 
+                               class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg">
+                    </div>
+                    
+                    <!-- Email Field -->
+                    <div class="mb-6">
+                        <label for="email" class="block text-sm font-semibold mb-2">
+                            メールアドレス <span class="text-red-500">*</span>
+                        </label>
+                        <input type="email" id="email" name="email" required 
+                               class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg">
+                    </div>
+                    
+                    <!-- Phone Field -->
+                    <div class="mb-6">
+                        <label for="phone" class="block text-sm font-semibold mb-2">
+                            お電話番号 <span class="text-gray-400 text-xs">（任意）</span>
+                        </label>
+                        <input type="tel" id="phone" name="phone" 
+                               class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg">
+                    </div>
+                    
+                    <!-- Inquiry Type -->
+                    <div class="mb-6">
+                        <label for="inquiry-type" class="block text-sm font-semibold mb-2">
+                            お問い合わせ種別
+                        </label>
+                        <select id="inquiry-type" name="inquiry-type" 
+                                class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg">
+                            <option value="">選択してください</option>
+                            <option value="product">商品について</option>
+                            <option value="gift">ギフトについて</option>
+                            <option value="wholesale">取扱いについて</option>
+                            <option value="other">その他</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Message Field -->
+                    <div class="mb-6">
+                        <label for="message" class="block text-sm font-semibold mb-2">
+                            お問い合わせ内容 <span class="text-red-500">*</span>
+                        </label>
+                        <textarea id="message" name="message" rows="6" required 
+                                  class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg resize-none"></textarea>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div class="text-center">
+                        <button type="submit" 
+                                class="bg-indigo-blue text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all">
+                            送信する
+                        </button>
+                    </div>
+                </form>
+                
+                <p class="text-center mt-8 text-gray-600" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-envelope mr-2"></i>
+                    メールでのお問い合わせ: info@yumenoame.jp
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Company Information Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-display font-bold text-center mb-12" data-aos="fade-up">
+                    会社概要
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-start">
+                    <!-- Company Details -->
+                    <div class="bg-cream p-8 rounded-lg" data-aos="fade-right">
+                        <dl class="space-y-4">
+                            <div>
+                                <dt class="font-semibold mb-1">販売者</dt>
+                                <dd class="text-gray-700">ゆめの飴</dd>
+                            </div>
+                            <div>
+                                <dt class="font-semibold mb-1">代表者</dt>
+                                <dd class="text-gray-700">山崎 恵子</dd>
+                            </div>
+                            <div>
+                                <dt class="font-semibold mb-1">所在地</dt>
+                                <dd class="text-gray-700">
+                                    〒636-0XXX<br>
+                                    奈良県生駒郡斑鳩町〇〇〇〇
+                                </dd>
+                            </div>
+                            <div>
+                                <dt class="font-semibold mb-1">電話番号</dt>
+                                <dd class="text-gray-700">090-XXXX-XXXX</dd>
+                            </div>
+                            <div>
+                                <dt class="font-semibold mb-1">メールアドレス</dt>
+                                <dd class="text-gray-700">info@yumenoame.jp</dd>
+                            </div>
+                        </dl>
+                    </div>
+                    
+                    <!-- Map Area -->
+                    <div class="rounded-lg overflow-hidden shadow-md" data-aos="fade-left">
+                        <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=800&q=80" 
+                             alt="奈良・斑鳩エリア" 
+                             class="w-full h-full object-cover">
+                        <div class="bg-white p-4">
+                            <p class="text-sm text-gray-600">
+                                <i class="fas fa-map-marker-alt mr-2 text-indigo-blue"></i>
+                                奈良県斑鳩町 - 法隆寺のある歴史と文化の町
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Retail Stores Section -->
+    <section id="stores" class="py-20 bg-cream">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-display font-bold text-center mb-8" data-aos="fade-up">
+                    取扱店舗のご案内
+                </h2>
+                
+                <p class="text-lg text-center mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    斑鳩の米飴は、奈良県内の下記店舗でもお求めいただけます。<br>
+                    実際に手に取ってご覧になりたい方は、お近くの店舗をご利用ください。<br>
+                    <span class="text-sm text-gray-600">※取扱状況や在庫は変動します。ご来店前に各店舗へお問い合わせいただくと確実です。</span>
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Store 1: HEX HIVE -->
+                    <div class="store-card bg-white rounded-lg shadow-sm overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                        <div class="h-48 bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80" 
+                                 alt="HEX HIVE（ヘックスハイブ）" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3 text-indigo-blue">
+                                <i class="fas fa-store mr-2"></i>HEX HIVE（ヘックスハイブ）
+                            </h3>
+                            <dl class="space-y-2 text-sm">
+                                <div class="flex">
+                                    <dt class="font-semibold w-20">住所：</dt>
+                                    <dd>奈良市椿井町45（ひがしむき商店街）</dd>
+                                </div>
+                                <div class="flex">
+                                    <dt class="font-semibold w-20">電話：</dt>
+                                    <dd>0742-81-7527</dd>
+                                </div>
+                                <div class="flex">
+                                    <dt class="font-semibold w-20">営業時間：</dt>
+                                    <dd>10:00～18:00</dd>
+                                </div>
+                                <div class="flex">
+                                    <dt class="font-semibold w-20">定休日：</dt>
+                                    <dd>月曜</dd>
+                                </div>
+                                <div class="flex">
+                                    <dt class="font-semibold w-20">Web：</dt>
+                                    <dd><a href="https://hexhive.base.shop/" target="_blank" class="text-indigo-blue hover:underline">hexhive.base.shop</a></dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                    
+                    <!-- Store 2: みのりの里 しらにわ -->
+                    <div class="store-card bg-white rounded-lg shadow-sm overflow-hidden" data-aos="fade-up" data-aos-delay="150">
+                        <div class="h-48 bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=800&q=80" 
+                                 alt="みのりの里 しらにわ" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-indigo-blue">
+                            <i class="fas fa-store mr-2"></i>みのりの里 しらにわ
+                        </h3>
+                        <dl class="space-y-2 text-sm">
+                            <div class="flex">
+                                <dt class="font-semibold w-20">住所：</dt>
+                                <dd>奈良県天理市乙木町809-1</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">電話：</dt>
+                                <dd>0743-67-3310</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">営業時間：</dt>
+                                <dd>9:30～18:00</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">定休日：</dt>
+                                <dd>水曜</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">Web：</dt>
+                                <dd><a href="https://shiraniwa.com/" target="_blank" class="text-indigo-blue hover:underline">shiraniwa.com</a></dd>
+                            </div>
+                        </dl>
+                        </div>
+                    </div>
+                    
+                    <!-- Store 3: 糀・茶 Café &en -->
+                    <div class="store-card bg-white rounded-lg shadow-sm overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                        <div class="h-48 bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1559305616-3f99cd43e353?auto=format&fit=crop&w=800&q=80" 
+                                 alt="糀・茶 Café &en" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-indigo-blue">
+                            <i class="fas fa-coffee mr-2"></i>糀・茶 Café &en
+                        </h3>
+                        <dl class="space-y-2 text-sm">
+                            <div class="flex">
+                                <dt class="font-semibold w-20">住所：</dt>
+                                <dd>奈良県天理市御経野町296-2</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">電話：</dt>
+                                <dd>0743-85-4733</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">営業時間：</dt>
+                                <dd>10:00～16:30</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">定休日：</dt>
+                                <dd>日曜・月曜</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">Web：</dt>
+                                <dd><a href="https://xn--u8jta0b685wy5n.com/" target="_blank" class="text-indigo-blue hover:underline">あんど円.com</a></dd>
+                            </div>
+                        </dl>
+                        </div>
+                    </div>
+                    
+                    <!-- Store 4: 旬の里 まみが丘 -->
+                    <div class="store-card bg-white rounded-lg shadow-sm overflow-hidden" data-aos="fade-up" data-aos-delay="250">
+                        <div class="h-48 bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1600298881974-6be191ceeda1?auto=format&fit=crop&w=800&q=80" 
+                                 alt="旬の里 まみが丘" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-indigo-blue">
+                            <i class="fas fa-seedling mr-2"></i>旬の里 まみが丘
+                        </h3>
+                        <dl class="space-y-2 text-sm">
+                            <div class="flex">
+                                <dt class="font-semibold w-20">住所：</dt>
+                                <dd>奈良県北葛城郡広陵町南郷676-1（馬見丘陵公園すぐ）</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">電話：</dt>
+                                <dd>0745-55-8302</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">営業時間：</dt>
+                                <dd>9:30～17:30</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">定休日：</dt>
+                                <dd>月曜（祝日の場合は翌日）</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">Web：</dt>
+                                <dd><a href="https://syunnosato-mamigaoka.com/" target="_blank" class="text-indigo-blue hover:underline">syunnosato-mamigaoka.com</a></dd>
+                            </div>
+                        </dl>
+                        </div>
+                    </div>
+                    
+                    <!-- Store 5: ギャラリーカフェ鵤楽舎 -->
+                    <div class="store-card bg-white rounded-lg shadow-sm overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                        <div class="h-48 bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" 
+                                 alt="ギャラリーカフェ鵤楽舎" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-indigo-blue">
+                            <i class="fas fa-palette mr-2"></i>ギャラリーカフェ鵤楽舎
+                        </h3>
+                        <dl class="space-y-2 text-sm">
+                            <div class="flex">
+                                <dt class="font-semibold w-20">住所：</dt>
+                                <dd>奈良県生駒郡斑鳩町小吉田2-30-6</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">電話：</dt>
+                                <dd>0745-60-6475</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">営業時間：</dt>
+                                <dd>11:00～17:00</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">定休日：</dt>
+                                <dd>水曜・木曜</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">Web：</dt>
+                                <dd><a href="https://www.instagram.com/korokorocafe/" target="_blank" class="text-indigo-blue hover:underline">Instagram</a></dd>
+                            </div>
+                        </dl>
+                        </div>
+                    </div>
+                    
+                    <!-- Store 6: 門前宿 和空法隆寺 -->
+                    <div class="store-card bg-white rounded-lg shadow-sm overflow-hidden" data-aos="fade-up" data-aos-delay="350">
+                        <div class="h-48 bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1512132411229-c30391241dd8?auto=format&fit=crop&w=800&q=80" 
+                                 alt="門前宿 和空法隆寺" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-indigo-blue">
+                            <i class="fas fa-torii-gate mr-2"></i>門前宿 和空法隆寺
+                        </h3>
+                        <dl class="space-y-2 text-sm">
+                            <div class="flex">
+                                <dt class="font-semibold w-20">住所：</dt>
+                                <dd>奈良県生駒郡斑鳩町法隆寺1-5-32</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">電話：</dt>
+                                <dd>0745-70-1155</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">営業時間：</dt>
+                                <dd>ショップ 10:00～17:00</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">定休日：</dt>
+                                <dd>無休</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">Web：</dt>
+                                <dd><a href="https://waqoo-horyuji.com/" target="_blank" class="text-indigo-blue hover:underline">waqoo-horyuji.com</a></dd>
+                            </div>
+                        </dl>
+                        </div>
+                    </div>
+                    
+                    <!-- Store 7: 古民家 ナンナ -->
+                    <div class="store-card bg-white rounded-lg shadow-sm overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                        <div class="h-48 bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" 
+                                 alt="古民家 ナンナ" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-indigo-blue">
+                            <i class="fas fa-home mr-2"></i>古民家 ナンナ
+                        </h3>
+                        <dl class="space-y-2 text-sm">
+                            <div class="flex">
+                                <dt class="font-semibold w-20">住所：</dt>
+                                <dd>奈良県大和高田市春日町1-4-5</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">電話：</dt>
+                                <dd>0745-61-7037</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">営業時間：</dt>
+                                <dd>11:30～15:00（月曜はショップのみ11:00～17:00）</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">定休日：</dt>
+                                <dd>火曜・木曜</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">Web：</dt>
+                                <dd><a href="https://www.instagram.com/kominka_nanna/" target="_blank" class="text-indigo-blue hover:underline">Instagram</a></dd>
+                            </div>
+                        </dl>
+                        </div>
+                    </div>
+                    
+                    <!-- Store 8: 道の駅かつらぎ -->
+                    <div class="store-card bg-white rounded-lg shadow-sm overflow-hidden" data-aos="fade-up" data-aos-delay="450">
+                        <div class="h-48 bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=800&q=80" 
+                                 alt="道の駅かつらぎ" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-indigo-blue">
+                            <i class="fas fa-road mr-2"></i>道の駅かつらぎ
+                        </h3>
+                        <dl class="space-y-2 text-sm">
+                            <div class="flex">
+                                <dt class="font-semibold w-20">住所：</dt>
+                                <dd>奈良県葛城市太田1257</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">電話：</dt>
+                                <dd>0745-48-1147</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">営業時間：</dt>
+                                <dd>9:00～19:00</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">定休日：</dt>
+                                <dd>無休</dd>
+                            </div>
+                            <div class="flex">
+                                <dt class="font-semibold w-20">Web：</dt>
+                                <dd><a href="https://www.michinoeki-katsuragi.jp/" target="_blank" class="text-indigo-blue hover:underline">michinoeki-katsuragi.jp</a></dd>
+                            </div>
+                        </dl>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Store Map Illustration -->
+                <div class="mt-12 text-center" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?auto=format&fit=crop&w=1200&q=80" 
+                         alt="奈良県内の取扱店舗" 
+                         class="mx-auto rounded-lg shadow-md max-w-4xl w-full">
+                    <p class="mt-4 text-sm text-gray-600">
+                        奈良県内8店舗で斑鳩の米飴をお取り扱いいただいています
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Legal Information Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <!-- 特定商取引法に基づく表記 -->
+                <div class="mb-16" data-aos="fade-up">
+                    <h2 class="text-3xl font-display font-bold text-center mb-12">
+                        特定商取引法に基づく表記
+                    </h2>
+                    
+                    <div class="bg-cream p-8 rounded-lg">
+                        <dl class="space-y-4">
+                            <div class="border-b pb-3">
+                                <dt class="font-semibold mb-2">販売事業者名</dt>
+                                <dd class="text-gray-700">ゆめの飴</dd>
+                            </div>
+                            <div class="border-b pb-3">
+                                <dt class="font-semibold mb-2">代表者名</dt>
+                                <dd class="text-gray-700">山崎 恵子</dd>
+                            </div>
+                            <div class="border-b pb-3">
+                                <dt class="font-semibold mb-2">所在地</dt>
+                                <dd class="text-gray-700">〒636-0XXX 奈良県生駒郡斑鳩町〇〇〇〇</dd>
+                            </div>
+                            <div class="border-b pb-3">
+                                <dt class="font-semibold mb-2">連絡先</dt>
+                                <dd class="text-gray-700">
+                                    電話: 090-XXXX-XXXX<br>
+                                    メール: info@yumenoame.jp
+                                </dd>
+                            </div>
+                            <div class="border-b pb-3">
+                                <dt class="font-semibold mb-2">商品代金以外の必要料金</dt>
+                                <dd class="text-gray-700">送料（地域により異なります）、銀行振込手数料</dd>
+                            </div>
+                            <div class="border-b pb-3">
+                                <dt class="font-semibold mb-2">返品・交換・キャンセルについて</dt>
+                                <dd class="text-gray-700">
+                                    不良品の場合のみ、商品到着後7日以内にご連絡ください。<br>
+                                    お客様都合による返品・交換は承っておりません。
+                                </dd>
+                            </div>
+                            <div>
+                                <dt class="font-semibold mb-2">支払方法</dt>
+                                <dd class="text-gray-700">提携通販サイトの決済方法に準じます</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+                
+                <!-- プライバシーポリシー -->
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="text-3xl font-display font-bold text-center mb-12">
+                        プライバシーポリシー
+                    </h2>
+                    
+                    <div class="bg-cream p-8 rounded-lg">
+                        <div class="space-y-6 text-gray-700">
+                            <div>
+                                <h3 class="font-semibold mb-2">個人情報の利用目的</h3>
+                                <p>
+                                    お問い合わせフォームから取得した個人情報は、以下の目的のみに利用いたします。
+                                </p>
+                                <ul class="list-disc list-inside mt-2 ml-4">
+                                    <li>お問い合わせへの回答</li>
+                                    <li>商品の発送及びご連絡</li>
+                                    <li>当社からの情報提供（お客様の同意がある場合）</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h3 class="font-semibold mb-2">第三者への提供</h3>
+                                <p>
+                                    お客様からお預かりした個人情報は、法令に基づく場合を除き、
+                                    お客様の同意なく第三者に提供することはありません。
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <h3 class="font-semibold mb-2">個人情報の管理</h3>
+                                <p>
+                                    当社は、個人情報への不正アクセス、紛失、破損、改ざん及び漏洩などを防ぐため、
+                                    適切な管理体制を整えています。
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <h3 class="font-semibold mb-2">お問い合わせ窓口</h3>
+                                <p>
+                                    個人情報に関するお問い合わせは、下記までご連絡ください。<br>
+                                    メール: info@yumenoame.jp<br>
+                                    電話: 090-XXXX-XXXX
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-sumi text-white py-16 relative overflow-hidden">
+        <!-- Background Logo -->
+        <div class="absolute inset-0 flex items-center justify-center opacity-5">
+            <div class="text-[200px] font-display font-bold">
+                ゆめの飴
+            </div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <!-- Company Info -->
+                    <div>
+                        <h3 class="text-2xl font-display font-bold mb-4">ゆめの飴</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            奈良・斑鳩から、<br>
+                            ていねいに作った米飴をお届けします。
+                        </p>
+                    </div>
+                    
+                    <!-- Quick Links -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">サイトマップ</h4>
+                        <ul class="space-y-2">
+                            <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">トップページ</a></li>
+                            <li><a href="index.html#philosophy" class="text-gray-400 hover:text-white transition-colors">米飴について</a></li>
+                            <li><a href="index.html#products" class="text-gray-400 hover:text-white transition-colors">商品一覧</a></li>
+                            <li><a href="#stores" class="text-gray-400 hover:text-white transition-colors">取扱店舗</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Legal Links -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">会社情報</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">お問い合わせ・会社情報</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">プライバシーポリシー</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">特定商取引法に基づく表記</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-700 pt-8 text-center">
+                    <p class="text-gray-400">
+                        &copy; 2024 ゆめの飴. All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let isMenuOpen = false;
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('block');
+                document.body.classList.add('overflow-hidden');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-times text-2xl"></i>';
+            } else {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('block');
+                document.body.classList.remove('overflow-hidden');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-2xl"></i>';
+            }
+        });
+        
+        // Form Submission
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('お問い合わせありがとうございます。内容を確認の上、ご返信させていただきます。');
+                contactForm.reset();
+            });
+        }
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
