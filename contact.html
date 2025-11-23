@@ -161,8 +161,7 @@
     <section class="relative h-[40vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <!-- Background Image -->
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1621262609683-2c4274669131?auto=format&fit=crop&w=1920&q=80"
-                alt="和紙のテクスチャ" class="w-full h-full object-cover opacity-40">
+            <img src="images/washi-header-bg.png" alt="和紙のテクスチャ" class="w-full h-full object-cover opacity-40">
             <div class="absolute inset-0 bg-[#3d3228] opacity-80 mix-blend-multiply"></div>
         </div>
 
@@ -176,16 +175,6 @@
             <p class="text-lg opacity-90 font-sans" data-aos="fade-up" data-aos-delay="200">
                 ご購入方法・取扱店舗のご案内
             </p>
-        </div>
-
-        <!-- Wave Shape Divider -->
-        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                preserveAspectRatio="none" class="relative block w-[calc(100%+1.3px)] h-[60px] text-[#fffcf5]">
-                <path
-                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                    class="fill-current"></path>
-            </svg>
         </div>
     </section>
 
@@ -433,11 +422,10 @@
                     </div>
 
                     <!-- Map Area -->
-                    <div class="space-y-6" data-aos="fade-left">
+                    <div class="space-y-6 flex flex-col" data-aos="fade-left">
                         <div
                             class="rounded-2xl overflow-hidden shadow-lg border-4 border-white h-[300px] relative group">
-                            <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=800&q=80"
-                                alt="奈良・斑鳩エリア"
+                            <img src="images/ikaruga-area.jpg" alt="奈良・斑鳩エリア"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
@@ -446,7 +434,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <div class="bg-white p-6 rounded-xl shadow-sm flex-1 flex items-center">
                             <p class="text-gray-600 leading-relaxed text-sm">
                                 法隆寺をはじめとする歴史的遺産に囲まれた、奈良県斑鳩町。<br>
                                 古くからの伝統と自然が息づくこの場所で、ゆめの飴は作られています。
@@ -460,15 +448,6 @@
 
     <!-- Retail Stores Section -->
     <section id="stores" class="py-24 bg-white relative">
-        <!-- Wave Shape Divider (Top) -->
-        <div class="absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                preserveAspectRatio="none" class="relative block w-[calc(100%+1.3px)] h-[40px] text-[#f9f5eb]">
-                <path
-                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                    class="fill-current"></path>
-            </svg>
-        </div>
 
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-6xl mx-auto">
@@ -490,8 +469,7 @@
                     <div class="bg-[#fffcf5] rounded-2xl shadow-md overflow-hidden border border-[#f3e5d8] group hover:shadow-xl transition-all duration-300"
                         data-aos="fade-up" data-aos-delay="100">
                         <div class="h-56 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80"
-                                alt="HEX HIVE（ヘックスハイブ）"
+                            <img src="images/store-hexhive.png" alt="HEX HIVE(ヘックスハイブ)"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                             <div
                                 class="absolute top-4 left-4 bg-[#3d3228] text-[#f3e5d8] text-xs font-bold px-3 py-1 rounded-full">
@@ -532,35 +510,40 @@
                     <!-- Store 2: みのりの里 しらにわ -->
                     <div class="bg-[#fffcf5] rounded-2xl shadow-md overflow-hidden border border-[#f3e5d8] group hover:shadow-xl transition-all duration-300"
                         data-aos="fade-up" data-aos-delay="150">
-                        <div class="h-48 bg-gray-200">
-                            <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=800&q=80"
-                                alt="みのりの里 しらにわ" class="w-full h-full object-cover">
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="images/store-shiraniwa.png" alt="みのりの里 しらにわ"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div
+                                class="absolute top-4 left-4 bg-[#3d3228] text-[#f3e5d8] text-xs font-bold px-3 py-1 rounded-full">
+                                天理市
+                            </div>
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-3 text-indigo-blue">
-                                <i class="fas fa-store mr-2"></i>みのりの里 しらにわ
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold mb-4 text-[#3d3228] flex items-center">
+                                <i class="fas fa-store mr-2 text-[#d4af37]"></i>みのりの里 しらにわ
                             </h3>
-                            <dl class="space-y-2 text-sm">
-                                <div class="flex">
-                                    <dt class="font-semibold w-20">住所：</dt>
-                                    <dd>奈良県天理市乙木町809-1</dd>
+                            <dl class="space-y-3 text-sm text-gray-600">
+                                <div class="flex border-b border-dashed border-[#d4af37]/30 pb-2">
+                                    <dt class="font-bold w-24 text-[#3d3228]">住所</dt>
+                                    <dd class="flex-1">奈良県天理市乙木町809-1</dd>
                                 </div>
-                                <div class="flex">
-                                    <dt class="font-semibold w-20">電話：</dt>
-                                    <dd>0743-67-3310</dd>
+                                <div class="flex border-b border-dashed border-[#d4af37]/30 pb-2">
+                                    <dt class="font-bold w-24 text-[#3d3228]">電話</dt>
+                                    <dd class="flex-1">0743-67-3310</dd>
                                 </div>
-                                <div class="flex">
-                                    <dt class="font-semibold w-20">営業時間：</dt>
-                                    <dd>9:30～18:00</dd>
+                                <div class="flex border-b border-dashed border-[#d4af37]/30 pb-2">
+                                    <dt class="font-bold w-24 text-[#3d3228]">営業時間</dt>
+                                    <dd class="flex-1">9:30～18:00</dd>
                                 </div>
-                                <div class="flex">
-                                    <dt class="font-semibold w-20">定休日：</dt>
-                                    <dd>水曜</dd>
+                                <div class="flex border-b border-dashed border-[#d4af37]/30 pb-2">
+                                    <dt class="font-bold w-24 text-[#3d3228]">定休日</dt>
+                                    <dd class="flex-1">水曜</dd>
                                 </div>
-                                <div class="flex">
-                                    <dt class="font-semibold w-20">Web：</dt>
-                                    <dd><a href="https://shiraniwa.com/" target="_blank"
-                                            class="text-indigo-blue hover:underline">shiraniwa.com</a></dd>
+                                <div class="flex pt-1">
+                                    <dt class="font-bold w-24 text-[#3d3228]">Web</dt>
+                                    <dd class="flex-1"><a href="https://shiraniwa.com/" target="_blank"
+                                            class="text-[#d4af37] hover:underline font-medium">shiraniwa.com <i
+                                                class="fas fa-external-link-alt text-xs ml-1"></i></a></dd>
                                 </div>
                             </dl>
                         </div>
@@ -570,8 +553,7 @@
                     <div class="bg-[#fffcf5] rounded-2xl shadow-md overflow-hidden border border-[#f3e5d8] group hover:shadow-xl transition-all duration-300"
                         data-aos="fade-up" data-aos-delay="200">
                         <div class="h-56 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1559305616-3f99cd43e353?auto=format&fit=crop&w=800&q=80"
-                                alt="糀・茶 Café &en"
+                            <img src="images/store-anden.png" alt="糀・茶 Café &en"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                             <div
                                 class="absolute top-4 left-4 bg-[#3d3228] text-[#f3e5d8] text-xs font-bold px-3 py-1 rounded-full">
@@ -613,8 +595,7 @@
                     <div class="bg-[#fffcf5] rounded-2xl shadow-md overflow-hidden border border-[#f3e5d8] group hover:shadow-xl transition-all duration-300"
                         data-aos="fade-up" data-aos-delay="250">
                         <div class="h-56 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1600298881974-6be191ceeda1?auto=format&fit=crop&w=800&q=80"
-                                alt="旬の里 まみが丘"
+                            <img src="images/store-mamigaoka.png" alt="旬の里 まみが丘"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                             <div
                                 class="absolute top-4 left-4 bg-[#3d3228] text-[#f3e5d8] text-xs font-bold px-3 py-1 rounded-full">
@@ -656,8 +637,7 @@
                     <div class="bg-[#fffcf5] rounded-2xl shadow-md overflow-hidden border border-[#f3e5d8] group hover:shadow-xl transition-all duration-300"
                         data-aos="fade-up" data-aos-delay="300">
                         <div class="h-56 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80"
-                                alt="ギャラリーカフェ鵤楽舎"
+                            <img src="images/store-ikarugasha.png" alt="ギャラリーカフェ鵤楽舎"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                             <div
                                 class="absolute top-4 left-4 bg-[#3d3228] text-[#f3e5d8] text-xs font-bold px-3 py-1 rounded-full">
@@ -699,8 +679,7 @@
                     <div class="bg-[#fffcf5] rounded-2xl shadow-md overflow-hidden border border-[#f3e5d8] group hover:shadow-xl transition-all duration-300"
                         data-aos="fade-up" data-aos-delay="350">
                         <div class="h-56 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1512132411229-c30391241dd8?auto=format&fit=crop&w=800&q=80"
-                                alt="門前宿 和空法隆寺"
+                            <img src="images/stay-waku.png" alt="門前宿 和空法隆寺"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                             <div
                                 class="absolute top-4 left-4 bg-[#3d3228] text-[#f3e5d8] text-xs font-bold px-3 py-1 rounded-full">
@@ -742,8 +721,7 @@
                     <div class="bg-[#fffcf5] rounded-2xl shadow-md overflow-hidden border border-[#f3e5d8] group hover:shadow-xl transition-all duration-300"
                         data-aos="fade-up" data-aos-delay="400">
                         <div class="h-56 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80"
-                                alt="古民家 ナンナ"
+                            <img src="images/stay-nanna.png" alt="古民家 ナンナ"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                             <div
                                 class="absolute top-4 left-4 bg-[#3d3228] text-[#f3e5d8] text-xs font-bold px-3 py-1 rounded-full">
@@ -785,8 +763,7 @@
                     <div class="bg-[#fffcf5] rounded-2xl shadow-md overflow-hidden border border-[#f3e5d8] group hover:shadow-xl transition-all duration-300"
                         data-aos="fade-up" data-aos-delay="450">
                         <div class="h-56 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=800&q=80"
-                                alt="道の駅かつらぎ"
+                            <img src="images/stay-katsuragi.png" alt="道の駅かつらぎ"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                             <div
                                 class="absolute top-4 left-4 bg-[#3d3228] text-[#f3e5d8] text-xs font-bold px-3 py-1 rounded-full">
@@ -825,16 +802,7 @@
                     </div>
                 </div>
 
-                <!-- Store Map Illustration -->
-                <div class="mt-16 text-center" data-aos="fade-up" data-aos-delay="500">
-                    <div class="inline-block p-4 bg-white rounded-2xl shadow-lg border border-[#f3e5d8]">
-                        <img src="https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?auto=format&fit=crop&w=1200&q=80"
-                            alt="奈良県内の取扱店舗" class="rounded-lg max-w-4xl w-full">
-                    </div>
-                    <p class="mt-6 text-sm text-gray-500 font-serif">
-                        奈良県内8店舗で斑鳩の米飴をお取り扱いいただいています
-                    </p>
-                </div>
+
             </div>
         </div>
     </section>
@@ -880,15 +848,6 @@
 
     <!-- Footer -->
     <footer class="relative bg-[#3d3228] text-[#f3e5d8] pt-24 pb-12 overflow-hidden">
-        <!-- Wave Shape Divider -->
-        <div class="absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                preserveAspectRatio="none" class="relative block w-[calc(100%+1.3px)] h-[60px] text-white">
-                <path
-                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                    class="fill-current"></path>
-            </svg>
-        </div>
 
         <!-- Background Pattern (Subtle) -->
         <div class="absolute inset-0 opacity-5 pointer-events-none"
@@ -954,36 +913,10 @@
 
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
-
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        let isMenuOpen = false;
-
-        mobileMenuBtn.addEventListener('click', () => {
-            isMenuOpen = !isMenuOpen;
-
-            if (isMenuOpen) {
-                mobileMenu.classList.remove('hidden');
-                mobileMenu.classList.add('block');
-                document.body.classList.add('overflow-hidden');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-times text-2xl"></i>';
-            } else {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('block');
-                document.body.classList.remove('overflow-hidden');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-2xl"></i>';
-            }
-        });
-
-        // Form Submission
+        // Form Submission (Specific to this page)
         const contactForm = document.querySelector('form');
         if (contactForm) {
             contactForm.addEventListener('submit', (e) => {
@@ -992,27 +925,6 @@
                 contactForm.reset();
             });
         }
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const headerOffset = 80;
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
     </script>
 </body>
 

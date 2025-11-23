@@ -382,3 +382,53 @@ a, button, input, textarea, select {
     .text-display-2 { font-size: 2rem; }
     .text-display-3 { font-size: 1.5rem; }
 }
+
+/* Customer Voice Swiper Navigation Customization */
+.customer-swiper .swiper-button-next,
+.customer-swiper .swiper-button-prev {
+    width: 44px;
+    height: 44px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: var(--indigo-blue);
+    transition: all 0.3s ease;
+}
+
+.customer-swiper .swiper-button-next:after,
+.customer-swiper .swiper-button-prev:after {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.customer-swiper .swiper-button-next:hover,
+.customer-swiper .swiper-button-prev:hover {
+    background-color: var(--indigo-blue);
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Desktop/Tablet: Move arrows outside */
+@media (min-width: 768px) {
+    .customer-swiper {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    .customer-swiper .swiper-button-next {
+        right: 10px;
+    }
+
+    .customer-swiper .swiper-button-prev {
+        left: 10px;
+    }
+}
+
+/* Mobile: Hide arrows */
+@media (max-width: 767px) {
+    .customer-swiper .swiper-button-next,
+    .customer-swiper .swiper-button-prev {
+        display: none;
+    }
+}
