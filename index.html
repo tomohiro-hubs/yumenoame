@@ -138,7 +138,7 @@
 
     <!-- Header Navigation -->
     <header class="fixed top-0 w-full z-50 transition-all duration-300" id="header">
-        <nav class="container mx-auto px-6 py-4">
+        <nav class="container mx-auto px-6 py-4 relative z-50">
             <div class="flex justify-between items-center">
                 <!-- Logo -->
                 <div class="flex items-center">
@@ -958,10 +958,48 @@
         </div>
     </footer>
 
+    <!-- Sticky CTA Buttons -->
+    <!-- Mobile Fixed Bottom Bar -->
+    <div
+        class="fixed bottom-0 left-0 w-full bg-white/90 backdrop-blur-md border-t border-gray-200 p-4 md:hidden z-50 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
+        <div class="flex gap-3">
+            <a href="contact.html"
+                class="flex-1 border-2 border-indigo-blue text-indigo-blue py-3 rounded-full text-center font-bold text-sm hover:bg-indigo-blue hover:text-white transition-colors">
+                お問い合わせ
+            </a>
+            <a href="https://external-shop.example.com" target="_blank"
+                class="flex-1 bg-indigo-blue text-white py-3 rounded-full text-center font-bold text-sm hover:bg-opacity-90 transition-opacity shadow-md">
+                購入する
+            </a>
+        </div>
+    </div>
+
+    <!-- Desktop Floating Button -->
+    <a href="https://external-shop.example.com" target="_blank" id="floating-cta"
+        class="hidden md:flex fixed bottom-8 right-8 bg-indigo-blue text-white px-8 py-4 rounded-full shadow-xl z-50 items-center gap-3 hover:bg-opacity-90 transition-all duration-300 transform translate-y-10 opacity-0">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="font-bold text-lg">購入する</span>
+    </a>
+
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
+
+    <!-- Sticky Button Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const floatingCta = document.getElementById('floating-cta');
+
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 300) {
+                    floatingCta.classList.remove('translate-y-10', 'opacity-0');
+                } else {
+                    floatingCta.classList.add('translate-y-10', 'opacity-0');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

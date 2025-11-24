@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>米飴とは何か？ - 斑鳩の米飴 | ゆめの飴</title>
+    <meta name="description" content="米飴（こめあめ）とは、お米と麦芽から作られる伝統的な甘味料です。砂糖との違いや、斑鳩の米飴の特徴、日々の暮らしへの取り入れ方をご紹介します。">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sumi': '#1A1A1A',
+                        'indigo-blue': '#2C3E50',
+                        'cream': '#F8F9FA',
+                        'amber-light': '#FFF8E1',
+                        'zen-gray': '#E0E0E0'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'Noto Sans JP', 'sans-serif'],
+                        'display': ['Manrope', 'Noto Sans JP', 'sans-serif']
+                    },
+                    animation: {
+                        'fadeIn': 'fadeIn 1.2s ease-out',
+                        'slideUp': 'slideUp 0.8s ease-out',
+                        'parallax': 'parallax 20s linear infinite',
+                        'float': 'float 6s ease-in-out infinite'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        parallax: {
+                            '0%': { transform: 'translateY(0)' },
+                            '100%': { transform: 'translateY(-20px)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Custom Styles -->
+    <style>
+        /* Noise Texture Background */
+        .bg-noise::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            z-index: 1;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Parallax Effect */
+        .parallax-bg {
+            will-change: transform;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2C3E50;
+            border-radius: 4px;
+        }
+
+        /* Vertical Text */
+        .writing-vertical {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+
+        /* Overlay Gradient */
+        .overlay-gradient {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%);
+        }
+
+        /* Glass Effect */
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+
+<body class="font-sans text-sumi bg-cream">
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 w-full z-50 transition-all duration-300" id="header">
+        <nav class="container mx-auto px-6 py-4 relative z-50">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html" class="hover:opacity-80 transition-opacity">
+                        <img src="images/logo-gold.png" alt="ゆめの飴" class="h-16 w-auto">
+                    </a>
+                </div>
+
+                <!-- Navigation Menu -->
+                <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <a href="index.html#philosophy"
+                        class="text-white hover:opacity-80 transition-opacity text-sm lg:text-base">米飴について</a>
+                    <a href="index.html#products"
+                        class="text-white hover:opacity-80 transition-opacity text-sm lg:text-base">商品一覧</a>
+                    <a href="index.html#usage"
+                        class="text-white hover:opacity-80 transition-opacity text-sm lg:text-base">使い方</a>
+                    <a href="index.html#faq"
+                        class="text-white hover:opacity-80 transition-opacity text-sm lg:text-base">よくある質問</a>
+                    <a href="contact.html#stores"
+                        class="text-white hover:opacity-80 transition-opacity text-sm lg:text-base">取扱店舗</a>
+                    <a href="contact.html"
+                        class="text-white hover:opacity-80 transition-opacity text-sm lg:text-base">お問い合わせ</a>
+                    <a href="https://external-shop.example.com" target="_blank"
+                        class="bg-white text-indigo-blue px-5 py-2 rounded-full hover:bg-opacity-90 transition-all text-sm lg:text-base font-bold">
+                        通販サイトへ
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-white" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div class="hidden fixed inset-0 bg-sumi bg-opacity-95 z-40" id="mobile-menu">
+            <div class="flex flex-col items-center justify-center h-full space-y-6">
+                <a href="index.html#philosophy" class="text-white text-xl hover:opacity-80">米飴について</a>
+                <a href="index.html#products" class="text-white text-xl hover:opacity-80">商品一覧</a>
+                <a href="index.html#usage" class="text-white text-xl hover:opacity-80">使い方</a>
+                <a href="index.html#faq" class="text-white text-xl hover:opacity-80">よくある質問</a>
+                <a href="contact.html#stores" class="text-white text-xl hover:opacity-80">取扱店舗</a>
+                <a href="contact.html" class="text-white text-xl hover:opacity-80">お問い合わせ</a>
+                <a href="https://external-shop.example.com" target="_blank"
+                    class="bg-white text-indigo-blue px-8 py-3 rounded-full text-lg font-bold mt-4">
+                    通販サイトへ
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Parallax -->
+        <div class="absolute inset-0 z-0 parallax-bg">
+            <img src="images/hero-bg.png" alt="Rice field at sunset" class="w-full h-full object-cover">
+            <div class="absolute inset-0 overlay-gradient"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center text-white">
+                <h1 class="text-3xl md:text-5xl font-display font-bold mb-6 leading-tight" data-aos="fade-up">
+                    米飴とは何か？<br>
+                    <span class="text-2xl md:text-4xl mt-4 block">穀物から生まれた、やさしい自然の甘さ</span>
+                </h1>
+                <p class="text-lg md:text-xl opacity-90 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    米飴のルーツと特徴を知り、<br class="md:hidden">砂糖の一部を米飴に置き換える理由が分かるページ
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+                <p class="text-lg leading-relaxed mb-8">
+                    日本で昔から使われてきた「水飴／米飴」。<br>
+                    それは、「お米」と「麦芽」から作る、穀物由来の甘味料です。
+                </p>
+                <div class="p-8 bg-cream rounded-lg border border-indigo-blue/10">
+                    <p class="text-xl font-semibold text-indigo-blue">
+                        ゼロか100かではなく、<br>
+                        今日の砂糖を“ひとさじだけ”米飴に変える。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roots Section -->
+    <section class="py-24 bg-cream bg-noise relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-center mb-16" data-aos="fade-up">
+                    米飴のルーツ<br>
+                    <span class="text-xl font-normal block mt-2">砂糖が貴重だった時代から続く甘味料</span>
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-12 mb-20">
+                    <div data-aos="fade-right">
+                        <h3 class="text-2xl font-bold mb-6 text-indigo-blue border-b-2 border-indigo-blue/20 pb-2">
+                            昔の日本で使われていた<br>「水飴」「米飴」という存在
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            まだ砂糖が高価で貴重だった時代、日本人はお米などの穀物から甘味を作り出していました。
+                            それが「水飴」や「米飴」です。
+                        </p>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            お米や麦を糖化して作るこの伝統的な甘味料は、
+                            そのまま舐めるだけでなく、和菓子や飴細工、料理の照り出しなど、
+                            様々な場面で人々の暮らしを支えてきました。
+                        </p>
+                    </div>
+                    <div class="relative h-64 md:h-auto rounded-lg overflow-hidden shadow-lg" data-aos="fade-left">
+                        <img src="images/philosophy-cooking.jpg" alt="Traditional cooking"
+                            class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 md:p-12 rounded-2xl shadow-sm" data-aos="fade-up">
+                    <h3 class="text-2xl font-bold mb-8 text-center text-indigo-blue">
+                        原料と製法 ─ 斑鳩の米飴は何が違うのか
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div>
+                            <h4 class="font-bold text-lg mb-4 text-gray-800">一般的な米飴</h4>
+                            <p class="text-gray-700 leading-relaxed">
+                                米・麦芽などの穀物から糖化して作る甘味料全般を指します。
+                                工業的に大量生産されるものも多くあります。
+                            </p>
+                        </div>
+                        <div class="bg-amber-light/30 p-6 rounded-lg border border-amber-light">
+                            <h4 class="font-bold text-lg mb-4 text-indigo-blue">斑鳩の米飴のポイント</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-indigo-blue mt-1 mr-3"></i>
+                                    <span>斑鳩産うるち米＋オーガニック麦芽のみを使用</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-indigo-blue mt-1 mr-3"></i>
+                                    <span>お米と麦芽を長時間かけて糖化 → 七輪でじっくり煮詰める少量生産</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-indigo-blue mt-1 mr-3"></i>
+                                    <span>人工甘味料・防腐剤・漂白剤不使用のシンプルな配合</span>
+                                </li>
+                            </ul>
+                            <p class="mt-4 text-sm font-semibold text-indigo-blue">
+                                「昔ながらの知恵」と「今の暮らし」に橋をかける存在です。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Difference Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-center mb-16" data-aos="fade-up">
+                    砂糖と何が違うのか<br>
+                    <span class="text-xl font-normal block mt-2">風味・使い方・イメージの差</span>
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-12 mb-16">
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-2xl font-bold mb-6 text-indigo-blue">見た目と味の特徴</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">見た目</h4>
+                                <p class="text-gray-700">とろりとした琥珀色の液体で、はちみつや水飴に近い質感です。</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">味</h4>
+                                <p class="text-gray-700">
+                                    砂糖のような強いキレのある甘さではなく、穀物を思わせるやわらかな甘さです。後味は比較的すっきりとしていて、ベタっと残りにくいのが特徴です。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-2xl font-bold mb-6 text-indigo-blue">砂糖との使い方の違い</h3>
+                        <div class="space-y-6">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-lg mb-2">砂糖</h4>
+                                <p class="text-gray-700">粉状で量りやすく、どんな料理にも万能なベース甘味。</p>
+                            </div>
+                            <div class="bg-amber-light/30 p-4 rounded-lg border border-amber-light">
+                                <h4 class="font-bold text-lg mb-2 text-indigo-blue">米飴</h4>
+                                <p class="text-gray-700 mb-2">液体なので、<span
+                                        class="font-bold">「照り」「つや」「コク」</span>を出したい料理と相性が良いです。</p>
+                                <p class="text-gray-700">デザートやおやつのトッピング（ヨーグルト・アイス・パンケーキ）にも使いやすいです。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center bg-cream p-8 rounded-lg" data-aos="fade-up">
+                    <p class="text-lg font-semibold text-indigo-blue">
+                        「全部を置き換える」よりも、<br>
+                        「最後に加える甘さ」「コクを足したい時」の一部を米飴にする使い方が向いています。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-24 bg-cream bg-noise relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-center mb-16" data-aos="fade-up">
+                    砂糖を米飴に“ひとさじ置き換える”メリット
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Benefit 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-indigo-blue text-3xl mb-4"><i class="fas fa-seedling"></i></div>
+                        <h3 class="text-xl font-bold mb-4">原材料がシンプルで<br>「何を食べているか」が分かりやすい</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            成分表示にカタカナの添加物が並ばない安心感があります。「お米と麦芽から作られた甘味料」と、子どもにも説明しやすいシンプルさ。家に置いておきたい“ストック食材”としても心理的なハードルが低いのが特徴です。
+                        </p>
+                    </div>
+
+                    <!-- Benefit 2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-indigo-blue text-3xl mb-4"><i class="fas fa-balance-scale"></i></div>
+                        <h3 class="text-xl font-bold mb-4">「選び方を変える」ことで、<br>甘いものとの付き合い方を見直せる</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            甘いものをゼロにはできませんが、「どういう甘さを選ぶか」は変えられます。「市販のおやつだけ」から、ヨーグルトや手作りパンケーキに米飴を添えるなど、家でコントロールできる甘さの比率を増やせます。「罪悪感を減らしたい」という気持ちに寄り添う選択肢です。
+                        </p>
+                    </div>
+
+                    <!-- Benefit 3 -->
+                    <div class="bg-white p-8 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-indigo-blue text-3xl mb-4"><i class="fas fa-utensils"></i></div>
+                        <h3 class="text-xl font-bold mb-4">料理の見た目と満足感が上がる</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            煮物や照り焼きの仕上げに加えると「テリ・ツヤ」が出ます。甘さだけでなく、見た目の満足感が上がり、「同じ材料でもちょっと特別に感じる」仕上がりに。手間を増やさずに「ひと手間かけた感」が演出できます。
+                        </p>
+                    </div>
+
+                    <!-- Benefit 4 -->
+                    <div class="bg-white p-8 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="400">
+                        <div class="text-indigo-blue text-3xl mb-4"><i class="fas fa-users"></i></div>
+                        <h3 class="text-xl font-bold mb-4">家族で共有しやすい甘味料</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            大人の料理・子どものおやつ・祖父母の煮物など、メニューを問わず活用できます。「家族みんなが使える1本」としてキッチンに置きやすく、誰か1人だけの健康志向ではなく、家族全体の選択として自然に取り入れられます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Usage Ideas Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-center mb-16" data-aos="fade-up">
+                    具体的にどう置き換える？<br>
+                    <span class="text-xl font-normal block mt-2">今日からできる“ひとさじチェンジ”アイデア</span>
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-12 mb-16">
+                    <div data-aos="fade-right">
+                        <h3 class="text-2xl font-bold mb-6 text-indigo-blue border-l-4 border-indigo-blue pl-4">朝食・おやつ編
+                        </h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-xs text-indigo-blue mt-2 mr-3"></i>
+                                <span class="text-lg">プレーンヨーグルト＋米飴＋旬のフルーツ</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-xs text-indigo-blue mt-2 mr-3"></i>
+                                <span class="text-lg">食パンやパンケーキにバター＋米飴＋きな粉</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-xs text-indigo-blue mt-2 mr-3"></i>
+                                <span class="text-lg">子どものおやつとして、市販のお菓子＋簡単な米飴デザートを組み合わせる</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div data-aos="fade-left">
+                        <h3 class="text-2xl font-bold mb-6 text-indigo-blue border-l-4 border-indigo-blue pl-4">
+                            おかず・メイン料理編</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-xs text-indigo-blue mt-2 mr-3"></i>
+                                <span class="text-lg">照り焼きチキンの砂糖を、仕上げだけ米飴に変える</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-xs text-indigo-blue mt-2 mr-3"></i>
+                                <span class="text-lg">煮物の最後のひとまわしを米飴にする（ツヤとコクをプラス）</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-xs text-indigo-blue mt-2 mr-3"></i>
+                                <span class="text-lg">ドレッシングの甘味に、少量の米飴を溶かして使う</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-indigo-blue text-white p-8 rounded-2xl text-center" data-aos="fade-up">
+                    <h3 class="text-2xl font-bold mb-4">最初の一歩の目安</h3>
+                    <p class="text-lg mb-6">いきなり砂糖を全て米飴にする必要はありません。</p>
+                    <div class="flex flex-col md:flex-row justify-center gap-6 text-indigo-blue">
+                        <div class="bg-white px-6 py-3 rounded-full font-bold">週に1〜2回のデザート</div>
+                        <div class="bg-white px-6 py-3 rounded-full font-bold">家族がよく食べる1〜2品の料理</div>
+                    </div>
+                    <p class="mt-6 text-lg">から、砂糖の一部を米飴に変えてみてください。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-cream">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-center mb-16" data-aos="fade-up">
+                    よくある疑問と不安 ─ 率直なQ&A
+                </h2>
+
+                <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Q1 -->
+                    <div class="bg-white rounded-lg shadow-sm">
+                        <button class="w-full text-left p-6 focus:outline-none faq-toggle" data-faq="q1">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-semibold">Q1. 「健康にいい甘味料」なんですか？</h3>
+                                <i class="fas fa-chevron-down text-indigo-blue transition-transform"
+                                    id="faq-icon-q1"></i>
+                            </div>
+                        </button>
+                        <div class="hidden px-6 pb-6" id="faq-content-q1">
+                            <p class="text-gray-700 leading-relaxed">
+                                本製品は食品であり、特定の疾病の予防・治療を目的としたものではありません。「健康にいい／悪い」を断言するのではなく、原材料がシンプルであること、使い方を自分でコントロールしやすいという観点で選んでいただければと思います。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div class="bg-white rounded-lg shadow-sm">
+                        <button class="w-full text-left p-6 focus:outline-none faq-toggle" data-faq="q2">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-semibold">Q2. 砂糖を全部米飴に置き換えた方がいい？</h3>
+                                <i class="fas fa-chevron-down text-indigo-blue transition-transform"
+                                    id="faq-icon-q2"></i>
+                            </div>
+                        </button>
+                        <div class="hidden px-6 pb-6" id="faq-content-q2">
+                            <p class="text-gray-700 leading-relaxed">
+                                無理に全てを置き換える必要はありません。普段使っている砂糖をベースにしつつ、「砂糖の一部を米飴に変える」くらいから始めるのが現実的です。「続けられる使い方」を優先してください。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div class="bg-white rounded-lg shadow-sm">
+                        <button class="w-full text-left p-6 focus:outline-none faq-toggle" data-faq="q3">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-semibold">Q3. カロリーや栄養はどうですか？</h3>
+                                <i class="fas fa-chevron-down text-indigo-blue transition-transform"
+                                    id="faq-icon-q3"></i>
+                            </div>
+                        </button>
+                        <div class="hidden px-6 pb-6" id="faq-content-q3">
+                            <p class="text-gray-700 leading-relaxed">
+                                一般的に甘味料である以上、摂り過ぎればカロリーはかさみます。「砂糖の代わりだからたくさんかけていい」というものではありません。あくまで「甘さの選択肢を増やす」ためのもの、としてご理解ください。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q4 -->
+                    <div class="bg-white rounded-lg shadow-sm">
+                        <button class="w-full text-left p-6 focus:outline-none faq-toggle" data-faq="q4">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-semibold">Q4. 子どもに使っても大丈夫？</h3>
+                                <i class="fas fa-chevron-down text-indigo-blue transition-transform"
+                                    id="faq-icon-q4"></i>
+                            </div>
+                        </button>
+                        <div class="hidden px-6 pb-6" id="faq-content-q4">
+                            <p class="text-gray-700 leading-relaxed">
+                                お米と麦芽を主原料とした食品ですので、基本的には問題ありません。ただし年齢・体質に差があるため、少量から様子を見ながらお使いください。不安な場合はかかりつけの専門家にご相談ください。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-center mb-16" data-aos="fade-up">
+                    斑鳩の米飴を選ぶ理由<br>
+                    <span class="text-xl font-normal block mt-2">他の米飴との違い</span>
+                </h2>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-cream p-8 rounded-lg text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-indigo-blue text-4xl mb-6"><i class="fas fa-map-marker-alt"></i></div>
+                        <h3 class="text-xl font-bold mb-4">斑鳩産うるち米と<br>オーガニック麦芽</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            斑鳩の田んぼで育てた米と、海外産オーガニック麦芽を使用。「顔が見える素材」で作っています。
+                        </p>
+                    </div>
+                    <div class="bg-cream p-8 rounded-lg text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-indigo-blue text-4xl mb-6"><i class="fas fa-fire-alt"></i></div>
+                        <h3 class="text-xl font-bold mb-4">七輪で煮詰める<br>少量生産の手間</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            糖化から煮詰めまで、時間と労力をかけて。季節や湿度による調整も、機械任せではなく人の手で行っています。
+                        </p>
+                    </div>
+                    <div class="bg-cream p-8 rounded-lg text-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-indigo-blue text-4xl mb-6"><i class="fas fa-video"></i></div>
+                        <h3 class="text-xl font-bold mb-4">製造工程を公開している<br>透明性</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed mb-4">
+                            「どう作られているのか」が見えることで、安心感につながれば。実際の製造動画を公開しています。
+                        </p>
+                        <a href="index.html#philosophy" class="text-indigo-blue font-bold underline text-sm">製造工程を見る</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product CTA Section -->
+    <section class="py-24 bg-cream bg-noise relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-display font-bold mb-12" data-aos="fade-up">
+                    まずは1本から
+                </h2>
+
+                <div class="bg-white p-8 md:p-12 rounded-2xl shadow-lg mb-12" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="w-full md:w-1/2">
+                            <img src="images/product-regular.jpg" alt="米飴レギュラー" class="w-full rounded-lg shadow-md">
+                        </div>
+                        <div class="w-full md:w-1/2 text-left">
+                            <div
+                                class="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full inline-block mb-4">
+                                おすすめ</div>
+                            <h3 class="text-2xl font-bold mb-2">はじめての方には<br>「レギュラー180g」がおすすめです</h3>
+                            <p class="text-gray-600 mb-6">家族で試すのにちょうどいい量です。朝食・おやつ・おかずに一通り使って、味や使い勝手を確かめられます。</p>
+                            <p class="text-sm text-gray-500 mb-8">※少量生産・厳選素材のため、大量生産品とは価格が異なりますが、その分こだわりを詰め込んでいます。</p>
+                            <a href="https://external-shop.example.com/product/regular" target="_blank"
+                                class="block w-full bg-indigo-blue text-white text-center py-4 rounded-full font-bold hover:bg-opacity-90 transition-all">
+                                通販サイトで購入する
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 text-left" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h4 class="font-bold mb-2">ミニ（110g）</h4>
+                        <p class="text-sm text-gray-600">まず試してみたい、一人暮らし・少人数向け</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border-2 border-indigo-blue/20">
+                        <h4 class="font-bold mb-2 text-indigo-blue">レギュラー（180g）</h4>
+                        <p class="text-sm text-gray-600">定番、一家に一本</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h4 class="font-bold mb-2">レギュラー木箱入り</h4>
+                        <p class="text-sm text-gray-600">ギフト・お礼用</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+                <h2 class="text-2xl md:text-3xl font-display font-bold mb-8">
+                    「ゼロか100か」ではなく、<br>
+                    今日の砂糖をひとさじだけ
+                </h2>
+                <p class="text-lg leading-relaxed mb-8">
+                    米飴とは、穀物由来の、昔から使われてきた甘味料。<br>
+                    砂糖とは、味も、質感も、使い方も、そして「選び方のストーリー」も違います。
+                </p>
+                <p class="text-lg leading-relaxed mb-12">
+                    原材料がシンプルだから、安心できる。<br>
+                    甘さとの付き合い方を見直すきっかけになる。<br>
+                    そして、家族みんなで共有できる。
+                </p>
+                <p class="text-xl font-bold text-indigo-blue mb-12">
+                    「甘いものをやめるのではなく、選び方を変える。<br>
+                    その選択肢のひとつとして、斑鳩の米飴を手に取ってみませんか？」
+                </p>
+                <a href="https://external-shop.example.com" target="_blank"
+                    class="inline-block bg-indigo-blue text-white px-12 py-4 rounded-full text-lg font-bold hover:bg-opacity-90 transition-all shadow-lg">
+                    斑鳩の米飴を購入する
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative bg-[#3d3228] text-[#f3e5d8] pt-24 pb-12 overflow-hidden">
+        <!-- Background Pattern (Subtle) -->
+        <div class="absolute inset-0 opacity-5 pointer-events-none"
+            style="background-image: url('data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\' fill-rule=\'evenodd\'%3E%3Ccircle cx=\'3\' cy=\'3\' r=\'3\'/%3E%3Ccircle cx=\'13\' cy=\'13\' r=\'3\'/%3E%3C/g%3E%3C/svg%3E'); background-size: 40px 40px;">
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col items-center text-center mb-12">
+                <!-- Logo -->
+                <a href="index.html" class="mb-6 group">
+                    <img src="images/logo-gold.png" alt="ゆめの飴"
+                        class="h-24 w-auto group-hover:opacity-80 transition-opacity">
+                </a>
+                <p class="text-sm opacity-90 leading-loose max-w-md mx-auto mb-8 font-serif">
+                    奈良・斑鳩の地で、昔ながらの製法を守り続ける。<br>
+                    お米と麦芽だけで作った、体にも心にも優しい甘さ。
+                </p>
+
+                <!-- Social / Contact Icons -->
+                <div class="flex space-x-8 mb-8">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full border border-[#f3e5d8] flex items-center justify-center hover:bg-[#f3e5d8] hover:text-[#3d3228] transition-all">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="contact.html"
+                        class="w-10 h-10 rounded-full border border-[#f3e5d8] flex items-center justify-center hover:bg-[#f3e5d8] hover:text-[#3d3228] transition-all">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Links -->
+            <div class="grid md:grid-cols-3 gap-8 border-t border-[#5d4d3e] pt-12 max-w-4xl mx-auto text-sm">
+                <div class="text-center">
+                    <h4 class="font-bold mb-4 text-[#d4af37] tracking-wider">商品・サービス</h4>
+                    <ul class="space-y-3 opacity-80">
+                        <li><a href="index.html#products" class="hover:text-white transition-colors">商品一覧</a></li>
+                        <li><a href="index.html#philosophy" class="hover:text-white transition-colors">米飴について</a></li>
+                        <li><a href="contact.html#stores" class="hover:text-white transition-colors">取扱店舗</a></li>
+                    </ul>
+                </div>
+                <div class="text-center">
+                    <h4 class="font-bold mb-4 text-[#d4af37] tracking-wider">サポート</h4>
+                    <ul class="space-y-3 opacity-80">
+                        <li><a href="index.html#faq" class="hover:text-white transition-colors">よくあるご質問</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="text-center">
+                    <h4 class="font-bold mb-4 text-[#d4af37] tracking-wider">法的情報</h4>
+                    <ul class="space-y-3 opacity-80">
+                        <li><a href="privacy.html" class="hover:text-white transition-colors">プライバシーポリシー</a></li>
+                        <li><a href="law.html" class="hover:text-white transition-colors">特定商取引法に基づく表記</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center mt-16 pt-8 border-t border-[#5d4d3e] text-xs opacity-60 font-sans">
+                <p>&copy; 2024 Yumenoame. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Fixed Bottom Bar -->
+    <div
+        class="fixed bottom-0 left-0 w-full bg-white/90 backdrop-blur-md border-t border-gray-200 p-4 md:hidden z-50 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
+        <div class="flex gap-3">
+            <a href="contact.html"
+                class="flex-1 border-2 border-indigo-blue text-indigo-blue py-3 rounded-full text-center font-bold text-sm hover:bg-indigo-blue hover:text-white transition-colors">
+                お問い合わせ
+            </a>
+            <a href="https://external-shop.example.com" target="_blank"
+                class="flex-1 bg-indigo-blue text-white py-3 rounded-full text-center font-bold text-sm hover:bg-opacity-90 transition-opacity shadow-md">
+                購入する
+            </a>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
