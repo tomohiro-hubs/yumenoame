@@ -148,7 +148,9 @@
 
                 <!-- Navigation Menu -->
                 <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
-                    <a href="index.html#philosophy"
+                    <a href="index.html"
+                        class="text-white hover:opacity-80 transition-opacity text-sm lg:text-base">ホーム</a>
+                    <a href="about-rice-syrup.html"
                         class="text-white hover:opacity-80 transition-opacity text-sm lg:text-base">米飴について</a>
                     <a href="index.html#products"
                         class="text-white hover:opacity-80 transition-opacity text-sm lg:text-base">商品一覧</a>
@@ -176,7 +178,8 @@
         <!-- Mobile Menu -->
         <div class="hidden fixed inset-0 bg-sumi bg-opacity-95 z-40" id="mobile-menu">
             <div class="flex flex-col items-center justify-center h-full space-y-6">
-                <a href="index.html#philosophy" class="text-white text-xl hover:opacity-80">米飴について</a>
+                <a href="index.html" class="text-white text-xl hover:opacity-80">ホーム</a>
+                <a href="about-rice-syrup.html" class="text-white text-xl hover:opacity-80">米飴について</a>
                 <a href="index.html#products" class="text-white text-xl hover:opacity-80">商品一覧</a>
                 <a href="index.html#usage" class="text-white text-xl hover:opacity-80">使い方</a>
                 <a href="index.html#faq" class="text-white text-xl hover:opacity-80">よくある質問</a>
@@ -190,7 +193,7 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!--Hero Section -->
     <section class="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         <!-- Background Image with Parallax -->
         <div class="absolute inset-0 z-0 parallax-bg">
@@ -223,7 +226,7 @@
                 <div class="p-8 bg-cream rounded-lg border border-indigo-blue/10">
                     <p class="text-xl font-semibold text-indigo-blue">
                         ゼロか100かではなく、<br>
-                        今日の砂糖を“ひとさじだけ”米飴に変える。
+                        今日の砂糖を"ひとさじだけ"米飴に変える。
                     </p>
                 </div>
             </div>
@@ -354,44 +357,80 @@
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-6xl mx-auto">
                 <h2 class="text-3xl md:text-4xl font-display font-bold text-center mb-16" data-aos="fade-up">
-                    砂糖を米飴に“ひとさじ置き換える”メリット
+                    砂糖を米飴に"ひとさじ置き換える"メリット
                 </h2>
 
                 <div class="grid md:grid-cols-2 gap-8">
                     <!-- Benefit 1 -->
-                    <div class="bg-white p-8 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="100">
-                        <div class="text-indigo-blue text-3xl mb-4"><i class="fas fa-seedling"></i></div>
-                        <h3 class="text-xl font-bold mb-4">原材料がシンプルで<br>「何を食べているか」が分かりやすい</h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            成分表示にカタカナの添加物が並ばない安心感があります。「お米と麦芽から作られた甘味料」と、子どもにも説明しやすいシンプルさ。家に置いておきたい“ストック食材”としても心理的なハードルが低いのが特徴です。
-                        </p>
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                        <img src="images/benefit-ingredients.png" alt="原材料のイメージ" class="w-full h-48 object-cover">
+                        <div class="p-8">
+                            <div class="text-indigo-blue text-3xl mb-4"><i class="fas fa-seedling"></i></div>
+                            <h3 class="text-xl font-bold mb-4">原材料がシンプルで<br>「何を食べているか」が分かりやすい</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                成分表示にカタカナの添加物が並ばない安心感があります。「お米と麦芽から作られた甘味料」と、子どもにも説明しやすいシンプルさ。家に置いておきたい"ストック食材"としても心理的なハードルが低いのが特徴です。
+                            </p>
+                        </div>
                     </div>
 
                     <!-- Benefit 2 -->
-                    <div class="bg-white p-8 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="200">
-                        <div class="text-indigo-blue text-3xl mb-4"><i class="fas fa-balance-scale"></i></div>
-                        <h3 class="text-xl font-bold mb-4">「選び方を変える」ことで、<br>甘いものとの付き合い方を見直せる</h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            甘いものをゼロにはできませんが、「どういう甘さを選ぶか」は変えられます。「市販のおやつだけ」から、ヨーグルトや手作りパンケーキに米飴を添えるなど、家でコントロールできる甘さの比率を増やせます。「罪悪感を減らしたい」という気持ちに寄り添う選択肢です。
-                        </p>
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                        <img src="images/benefit-lifestyle.png" alt="甘さとの付き合い方" class="w-full h-48 object-cover">
+                        <div class="p-8">
+                            <div class="text-indigo-blue text-3xl mb-4"><i class="fas fa-balance-scale"></i></div>
+                            <h3 class="text-xl font-bold mb-4">「選び方を変える」ことで、<br>甘いものとの付き合い方を見直せる</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                甘いものをゼロにはできませんが、「どういう甘さを選ぶか」は変えられます。「市販のおやつだけ」から、ヨーグルトや手作りパンケーキに米飴を添えるなど、家でコントロールできる甘さの比率を増やせます。「罪悪感を減らしたい」という気持ちに寄り添う選択肢です。
+                            </p>
+                        </div>
                     </div>
 
                     <!-- Benefit 3 -->
-                    <div class="bg-white p-8 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="300">
-                        <div class="text-indigo-blue text-3xl mb-4"><i class="fas fa-utensils"></i></div>
-                        <h3 class="text-xl font-bold mb-4">料理の見た目と満足感が上がる</h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            煮物や照り焼きの仕上げに加えると「テリ・ツヤ」が出ます。甘さだけでなく、見た目の満足感が上がり、「同じ材料でもちょっと特別に感じる」仕上がりに。手間を増やさずに「ひと手間かけた感」が演出できます。
-                        </p>
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                        <img src="images/benefit-cooking.png" alt="料理の照りとツヤ" class="w-full h-48 object-cover">
+                        <div class="p-8">
+                            <div class="text-indigo-blue text-3xl mb-4"><i class="fas fa-utensils"></i></div>
+                            <h3 class="text-xl font-bold mb-4">料理の見た目と満足感が上がる</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                煮物や照り焼きの仕上げに加えると「テリ・ツヤ」が出ます。甘さだけでなく、見た目の満足感が上がり、「同じ材料でもちょっと特別に感じる」仕上がりに。手間を増やさずに「ひと手間かけた感」が演出できます。
+                            </p>
+                        </div>
                     </div>
 
                     <!-- Benefit 4 -->
-                    <div class="bg-white p-8 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="400">
-                        <div class="text-indigo-blue text-3xl mb-4"><i class="fas fa-users"></i></div>
-                        <h3 class="text-xl font-bold mb-4">家族で共有しやすい甘味料</h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            大人の料理・子どものおやつ・祖父母の煮物など、メニューを問わず活用できます。「家族みんなが使える1本」としてキッチンに置きやすく、誰か1人だけの健康志向ではなく、家族全体の選択として自然に取り入れられます。
-                        </p>
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                        <img src="images/benefit-family.png" alt="家族団らん" class="w-full h-48 object-cover">
+                        <div class="p-8">
+                            <div class="text-indigo-blue text-3xl mb-4"><i class="fas fa-users"></i></div>
+                            <h3 class="text-xl font-bold mb-4">家族で共有しやすい甘味料</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                大人の料理・子どものおやつ・祖父母の煮物など、メニューを問わず活用できます。「家族みんなが使える1本」としてキッチンに置きやすく、誰か1人だけの健康志向ではなく、家族全体の選択として自然に取り入れられます。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Benefit 5 -->
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+                        <img src="images/benefit-digestion.png" alt="健康的な朝食" class="w-full h-48 object-cover">
+                        <div class="p-8">
+                            <div class="text-indigo-blue text-3xl mb-4"><i class="fas fa-clock"></i></div>
+                            <h3 class="text-xl font-bold mb-4">消化がゆっくりで<br>腹持ちが良い</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                多糖類（複合炭水化物）を多く含むため、砂糖に比べて消化吸収が穏やかです。血糖値の急激な乱高下を抑え、穏やかなエネルギー供給が続きます。朝食や子どものおやつに取り入れると、集中力の持続や腹持ちの良さにつながります。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Benefit 6 -->
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden" data-aos="fade-up" data-aos-delay="600">
+                        <img src="images/benefit-versatility.png" alt="料理のバリエーション" class="w-full h-48 object-cover">
+                        <div class="p-8">
+                            <div class="text-indigo-blue text-3xl mb-4"><i class="fas fa-globe-asia"></i></div>
+                            <h3 class="text-xl font-bold mb-4">和食だけでなく<br>洋食・中華にも合う</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                「和風の調味料」と思われがちですが、実は万能です。トマトソースの酸味をまろやかにしたり、ドレッシングのつなぎに使ったり、中華の照り出しに使ったり。ハチミツやメープルシロップのようなクセがないため、素材の味を邪魔せず、ジャンルを問わず隠し味として活躍します。
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -404,7 +443,7 @@
             <div class="max-w-5xl mx-auto">
                 <h2 class="text-3xl md:text-4xl font-display font-bold text-center mb-16" data-aos="fade-up">
                     具体的にどう置き換える？<br>
-                    <span class="text-xl font-normal block mt-2">今日からできる“ひとさじチェンジ”アイデア</span>
+                    <span class="text-xl font-normal block mt-2">今日からできる"ひとさじチェンジ"アイデア</span>
                 </h2>
 
                 <div class="grid md:grid-cols-2 gap-12 mb-16">
@@ -446,14 +485,24 @@
                     </div>
                 </div>
 
-                <div class="bg-indigo-blue text-white p-8 rounded-2xl text-center" data-aos="fade-up">
-                    <h3 class="text-2xl font-bold mb-4">最初の一歩の目安</h3>
-                    <p class="text-lg mb-6">いきなり砂糖を全て米飴にする必要はありません。</p>
-                    <div class="flex flex-col md:flex-row justify-center gap-6 text-indigo-blue">
-                        <div class="bg-white px-6 py-3 rounded-full font-bold">週に1〜2回のデザート</div>
-                        <div class="bg-white px-6 py-3 rounded-full font-bold">家族がよく食べる1〜2品の料理</div>
+                <div class="relative overflow-hidden rounded-2xl" data-aos="fade-up">
+                    <!-- Background Image -->
+                    <div class="absolute inset-0">
+                        <img src="images/cta-background.png" alt="" class="w-full h-full object-cover">
+                        <!-- Dark overlay for better text visibility -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-indigo-blue/90 to-indigo-blue/80"></div>
                     </div>
-                    <p class="mt-6 text-lg">から、砂糖の一部を米飴に変えてみてください。</p>
+
+                    <!-- Content -->
+                    <div class="relative z-10 text-white p-8 text-center">
+                        <h3 class="text-2xl font-bold mb-4 drop-shadow-lg">最初の一歩の目安</h3>
+                        <p class="text-lg mb-6 drop-shadow-md">いきなり砂糖を全て米飴にする必要はありません。</p>
+                        <div class="flex flex-col md:flex-row justify-center gap-6 text-indigo-blue">
+                            <div class="bg-white px-6 py-3 rounded-full font-bold shadow-lg">週に1〜2回のデザート</div>
+                            <div class="bg-white px-6 py-3 rounded-full font-bold shadow-lg">家族がよく食べる1〜2品の料理</div>
+                        </div>
+                        <p class="mt-6 text-lg drop-shadow-md">から、砂糖の一部を米飴に変えてみてください。</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -685,14 +734,16 @@
                 <div class="text-center">
                     <h4 class="font-bold mb-4 text-[#d4af37] tracking-wider">商品・サービス</h4>
                     <ul class="space-y-3 opacity-80">
+                        <li><a href="index.html" class="hover:text-white transition-colors">ホーム</a></li>
+                        <li><a href="about-rice-syrup.html" class="hover:text-white transition-colors">米飴について</a></li>
                         <li><a href="index.html#products" class="hover:text-white transition-colors">商品一覧</a></li>
-                        <li><a href="index.html#philosophy" class="hover:text-white transition-colors">米飴について</a></li>
                         <li><a href="contact.html#stores" class="hover:text-white transition-colors">取扱店舗</a></li>
                     </ul>
                 </div>
                 <div class="text-center">
                     <h4 class="font-bold mb-4 text-[#d4af37] tracking-wider">サポート</h4>
                     <ul class="space-y-3 opacity-80">
+                        <li><a href="index.html#usage" class="hover:text-white transition-colors">使い方</a></li>
                         <li><a href="index.html#faq" class="hover:text-white transition-colors">よくあるご質問</a></li>
                         <li><a href="contact.html" class="hover:text-white transition-colors">お問い合わせ</a></li>
                     </ul>
