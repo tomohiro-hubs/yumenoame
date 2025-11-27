@@ -141,27 +141,30 @@
         <nav class="container mx-auto px-6 py-4 relative z-50">
             <div class="flex justify-between items-center">
                 <!-- Logo -->
-                <div class="flex items-center">
+                <div class="flex items-center flex-shrink-0">
                     <a href="#" class="hover:opacity-80 transition-opacity">
                         <img src="images/logo-gold.png" alt="ゆめの飴" class="h-16 w-auto">
                     </a>
                 </div>
 
                 <!-- Navigation Menu -->
-                <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
-                    <a href="#philosophy"
-                        class="text-white hover:opacity-80 transition-opacity text-sm lg:text-base">米飴について</a>
-                    <a href="#products"
-                        class="text-white hover:opacity-80 transition-opacity text-sm lg:text-base">商品一覧</a>
-                    <a href="#usage" class="text-white hover:opacity-80 transition-opacity text-sm lg:text-base">使い方</a>
-                    <a href="#faq"
-                        class="text-white hover:opacity-80 transition-opacity text-sm lg:text-base">よくある質問</a>
+                <div class="hidden md:flex items-center space-x-6 lg:space-x-8 ml-4">
+                    <a href="index.html"
+                        class="text-white hover:opacity-80 transition-opacity text-sm lg:text-base whitespace-nowrap">ホーム</a>
+                    <a href="about-rice-syrup.html"
+                        class="text-white hover:opacity-80 transition-opacity text-sm lg:text-base whitespace-nowrap">米飴について</a>
+                    <a href="index.html#products"
+                        class="text-white hover:opacity-80 transition-opacity text-sm lg:text-base whitespace-nowrap">商品一覧</a>
+                    <a href="index.html#usage"
+                        class="text-white hover:opacity-80 transition-opacity text-sm lg:text-base whitespace-nowrap">使い方</a>
+                    <a href="index.html#faq"
+                        class="text-white hover:opacity-80 transition-opacity text-sm lg:text-base whitespace-nowrap">よくある質問</a>
                     <a href="contact.html#stores"
-                        class="text-white hover:opacity-80 transition-opacity text-sm lg:text-base">取扱店舗</a>
+                        class="text-white hover:opacity-80 transition-opacity text-sm lg:text-base whitespace-nowrap">取扱店舗</a>
                     <a href="contact.html"
-                        class="text-white hover:opacity-80 transition-opacity text-sm lg:text-base">お問い合わせ</a>
+                        class="text-white hover:opacity-80 transition-opacity text-sm lg:text-base whitespace-nowrap">お問い合わせ</a>
                     <a href="https://external-shop.example.com" target="_blank"
-                        class="bg-white text-indigo-blue px-5 py-2 rounded-full hover:bg-opacity-90 transition-all text-sm lg:text-base font-bold">
+                        class="bg-white text-indigo-blue px-5 py-2 rounded-full hover:bg-opacity-90 transition-all text-sm lg:text-base font-bold whitespace-nowrap">
                         通販サイトへ
                     </a>
                 </div>
@@ -173,22 +176,23 @@
             </div>
         </nav>
 
-        <!-- Mobile Menu -->
-        <div class="hidden fixed inset-0 bg-sumi bg-opacity-95 z-40" id="mobile-menu">
-            <div class="flex flex-col items-center justify-center h-full space-y-6">
-                <a href="#philosophy" class="text-white text-xl hover:opacity-80">米飴について</a>
-                <a href="#products" class="text-white text-xl hover:opacity-80">商品一覧</a>
-                <a href="#usage" class="text-white text-xl hover:opacity-80">使い方</a>
-                <a href="#faq" class="text-white text-xl hover:opacity-80">よくある質問</a>
-                <a href="contact.html#stores" class="text-white text-xl hover:opacity-80">取扱店舗</a>
-                <a href="contact.html" class="text-white text-xl hover:opacity-80">お問い合わせ</a>
-                <a href="https://external-shop.example.com" target="_blank"
-                    class="bg-white text-indigo-blue px-8 py-3 rounded-full text-lg font-bold mt-4">
-                    通販サイトへ
-                </a>
-            </div>
-        </div>
     </header>
+
+    <!-- Mobile Menu -->
+    <div class="hidden fixed inset-0 bg-sumi bg-opacity-95 z-40" id="mobile-menu">
+        <div class="flex flex-col items-center justify-center h-full space-y-6">
+            <a href="about-rice-syrup.html" class="text-white text-xl hover:opacity-80">米飴について</a>
+            <a href="#products" class="text-white text-xl hover:opacity-80">商品一覧</a>
+            <a href="#usage" class="text-white text-xl hover:opacity-80">使い方</a>
+            <a href="#faq" class="text-white text-xl hover:opacity-80">よくある質問</a>
+            <a href="contact.html#stores" class="text-white text-xl hover:opacity-80">取扱店舗</a>
+            <a href="contact.html" class="text-white text-xl hover:opacity-80">お問い合わせ</a>
+            <a href="https://external-shop.example.com" target="_blank"
+                class="bg-white text-indigo-blue px-8 py-3 rounded-full text-lg font-bold mt-4">
+                通販サイトへ
+            </a>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden py-24">

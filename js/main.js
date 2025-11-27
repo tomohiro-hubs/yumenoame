@@ -8,9 +8,12 @@ AOS.init({
 // Header Background Change on Scroll
 const header = document.getElementById('header');
 let lastScrollY = window.scrollY;
+let isMenuOpen = false;
 
 window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
+
+    if (isMenuOpen) return;
 
     // Add background to header when scrolling down
     if (currentScrollY > 100) {
@@ -32,13 +35,13 @@ window.addEventListener('scroll', () => {
 // Mobile Menu Toggle
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
-let isMenuOpen = false;
 
 mobileMenuBtn.addEventListener('click', () => {
     isMenuOpen = !isMenuOpen;
 
     if (isMenuOpen) {
         mobileMenu.classList.remove('hidden');
+        header.classList.remove('-translate-y-full');
         mobileMenu.classList.add('block');
         document.body.classList.add('overflow-hidden');
 
