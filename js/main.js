@@ -1,9 +1,18 @@
 // Initialize AOS (Animate On Scroll)
-AOS.init({
-    duration: 1000,
-    once: true,
-    offset: 100
-});
+if (typeof AOS !== 'undefined') {
+    AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100
+    });
+} else {
+    // Fallback: keep text/content visible when CDN-loaded AOS script is unavailable.
+    document.querySelectorAll('[data-aos]').forEach((element) => {
+        element.classList.add('aos-animate');
+        element.style.opacity = '1';
+        element.style.transform = 'none';
+    });
+}
 
 // Header Background Change on Scroll
 const header = document.getElementById('header');
@@ -110,6 +119,86 @@ faqToggles.forEach(toggle => {
             icon.classList.remove('rotate-180');
         }
     });
+});
+
+// Usage recipe modal
+const recipeButtons = document.querySelectorAll('.usage-recipe-btn');
+const recipeModal = document.getElementById('usage-recipe-modal');
+const recipeCloseButton = document.getElementById('usage-recipe-close');
+const recipeTitle = document.getElementById('usage-recipe-title');
+const recipeSteps = document.getElementById('usage-recipe-steps');
+
+const recipeContents = {
+    yogurt: {
+        title: 'ヨーグルトにひとさじ',
+        steps: [
+            'プレーンヨーグルトを器に盛ります（約150g）。',
+            '米飴を小さじ1〜2かけて、全体に広げます。',
+            'お好みでバナナやベリーをのせて完成です。'
+        ]
+    },
+    pancake: {
+        title: 'パンケーキ×きな粉',
+        steps: [
+            '焼き上げたパンケーキをお皿に盛りつけます。',
+            '米飴を小さじ2ほど、円を描くようにかけます。',
+            '最後にきな粉をひとふりして完成です。'
+        ]
+    },
+    teriyaki: {
+        title: '照り焼きの仕上げに',
+        steps: [
+            'フライパンでしょう油・酒・みりんを温めます。',
+            '火を弱めて米飴小さじ1〜2を加え、溶かします。',
+            '具材に絡め、つやが出たら火を止めて完成です。'
+        ]
+    }
+};
+
+function openRecipeModal(recipeId) {
+    if (!recipeModal || !recipeTitle || !recipeSteps) return;
+    const recipe = recipeContents[recipeId];
+    if (!recipe) return;
+
+    recipeTitle.textContent = recipe.title;
+    recipeSteps.innerHTML = recipe.steps
+        .map((step, index) => `<li><span class="font-semibold text-indigo-blue mr-2">${index + 1}.</span>${step}</li>`)
+        .join('');
+
+    recipeModal.classList.remove('hidden');
+    recipeModal.classList.add('flex');
+    document.body.classList.add('overflow-hidden');
+}
+
+function closeRecipeModal() {
+    if (!recipeModal) return;
+    recipeModal.classList.add('hidden');
+    recipeModal.classList.remove('flex');
+    document.body.classList.remove('overflow-hidden');
+}
+
+recipeButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        openRecipeModal(button.getAttribute('data-recipe-id'));
+    });
+});
+
+if (recipeCloseButton) {
+    recipeCloseButton.addEventListener('click', closeRecipeModal);
+}
+
+if (recipeModal) {
+    recipeModal.addEventListener('click', (event) => {
+        if (event.target === recipeModal) {
+            closeRecipeModal();
+        }
+    });
+}
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && recipeModal && !recipeModal.classList.contains('hidden')) {
+        closeRecipeModal();
+    }
 });
 
 // Smooth Scroll for Anchor Links
