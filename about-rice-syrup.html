@@ -748,8 +748,15 @@
     </section>
 
     <!-- Conclusion Section -->
-    <section class="py-0 overflow-hidden" style="background: linear-gradient(120deg, #fdf6ec 0%, #f5e8d0 60%, #ede0c4 100%);">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-stretch min-h-[560px]">
+    <section class="py-0 overflow-hidden relative">
+        <!-- Full-width background image -->
+        <div class="absolute inset-0 z-0">
+            <img src="images/hero-product.jpg" alt="斑鳩の米飴 商品イメージ" class="w-full h-full object-cover object-center">
+            <!-- Left overlay for text readability -->
+            <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(253,246,236,0.97) 0%, rgba(253,246,236,0.93) 40%, rgba(253,246,236,0.6) 65%, rgba(253,246,236,0.05) 100%);"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-stretch min-h-[560px] relative z-10">
 
             <!-- Left: Text -->
             <div class="w-full md:w-[56%] flex flex-col justify-center px-8 md:px-16 py-16 md:py-20" data-aos="fade-right">
@@ -810,12 +817,8 @@
                 </a>
             </div>
 
-            <!-- Right: Product Image -->
-            <div class="w-full md:w-[44%] relative flex items-end justify-center overflow-hidden" data-aos="fade-left">
-                <img src="images/hero-product.jpg" alt="斑鳩の米飴 商品イメージ"
-                    class="w-full h-full object-cover object-center"
-                    style="min-height:400px; max-height:680px;">
-            </div>
+            <!-- Right: empty spacer so text stays left -->
+            <div class="hidden md:block md:w-[44%]"></div>
 
         </div>
     </section>
