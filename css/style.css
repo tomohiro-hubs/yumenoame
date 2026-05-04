@@ -463,3 +463,65 @@ a, button, input, textarea, select {
         display: none;
     }
 }
+
+/* Cross-page responsive tuning */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 767px) {
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    .py-40,
+    .py-36 {
+        padding-top: 4.25rem !important;
+        padding-bottom: 4.25rem !important;
+    }
+
+    .mb-20 {
+        margin-bottom: 2.75rem !important;
+    }
+
+    .gap-12,
+    .gap-10 {
+        gap: 1.5rem !important;
+    }
+
+    .space-y-8,
+    .space-y-6 {
+        row-gap: 1.1rem !important;
+    }
+
+    .text-5xl {
+        font-size: 2rem !important;
+        line-height: 1.25 !important;
+    }
+
+    .text-4xl {
+        font-size: 1.75rem !important;
+        line-height: 1.35 !important;
+    }
+
+    .text-3xl {
+        font-size: 1.45rem !important;
+        line-height: 1.4 !important;
+    }
+
+    .mobile-menu-link {
+        font-size: 1.05rem !important;
+        line-height: 1.5 !important;
+    }
+
+    .company-photo-frame {
+        height: 340px !important;
+    }
+}
